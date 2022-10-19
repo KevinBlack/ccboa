@@ -1,0 +1,291 @@
+
+<template>
+  <div>
+    <el-row>
+      <el-col>
+        <el-form
+          :model="ruleForm"
+          ref="ruleForm"
+          label-width="100px"
+          class="demo-ruleForm mt20"
+          :class="{mtdown:down}"
+        >
+          <el-row>
+            <el-col :span="8">
+              <el-form-item label="统计日期">
+                <div class="block">
+                  <el-date-picker
+                    @change="timeChange"
+                    v-model="times"
+                    unlink-panels
+                    value-format="yyyy-MM-dd"
+                    size="small"
+                    type="daterange"
+                    range-separator="-"
+                    start-placeholde="开始日期"
+                    end-placeholde="结束日期"
+                  ></el-date-picker>
+                </div>
+              </el-form-item>
+            </el-col>
+            <!-- <el-col :span="6">
+              <el-form-item label="承办部门" prop="hostDepartment">
+                <el-input v-model="ruleForm.hostDepartment" readonly="readonly" placeholder="请选择"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="2">
+              <el-button type="primary">选择</el-button>
+            </el-col> -->
+            <el-col :span="8">
+              <el-col v-if="!down" class="arrowup">
+                <el-button type="primary" @click="submitForm">统计</el-button>
+                <el-button type="primary" @click="resetForm">重置</el-button>
+              </el-col>
+            </el-col>
+          </el-row>
+
+
+        </el-form>
+      </el-col>
+
+      <el-col :span="24" style="padding:20px;">
+        <table class="stcs_table">
+          <tr class="table-first">
+            <td>
+              <h3 style="font-weight: bold;">统计结果</h3>
+              </td>
+            <td class="txtRight">
+              <el-button style="text-align:right;" size="small" @click="exportExc" v-preventClick class="mrg-b-20">导 出</el-button>
+            </td>
+          </tr>
+          <tr>
+            <td>表头：直发文统计</td>
+          </tr>
+          <tr>
+            <td>
+              统计日期：{{start1}}
+              <span v-if="start1">至</span>
+              {{end1}}
+              <br />
+              <span style="font-weight: 700;">说明：</span>
+              <br />1.本统计为按自然月进行统计，例如：统计区间为1月至6月，则统计1月1日至6月30日的数据。
+              <br />2.如需要本月数据，统计结果中的办结数据为统计日前一天的数据，流转数据为实时数据。例如：统计区间为1月至本月，统计日为本月10日，则统计1月1日至本月9日的办结数据和1月1日至本月10日的流转数据。
+            </td>
+          </tr>
+        </table>
+      </el-col>
+      <!-- <el-col class="mt20end">    v-if="isEnd" -->
+      <el-col style="margin: 20px 0;">
+        <m-table
+          size="medium"
+          :isSelection="false"
+          :isIndex="false"
+          :isPagination="false"
+          :isHandle="false"
+          :tableData="tableData"
+          :tableCols="tableCols"
+          v-loading="tableLoading"
+        ></m-table>
+      </el-col>
+
+      <el-col :span="24" style="padding:20px ;">
+        <table class="stcs_table">
+          <tr>
+            <td>
+              <br />
+              <span style="font-weight: 700;">说明：</span>
+              <br />（1）上级行直发数：收到上级行制发的直发文数量
+              <br />（2）转直发数：收到上级行非直发文件，由本级行自定义为直发文件的数量。
+            </td>
+          </tr>
+        </table>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import mTable from "components/table/mTable.vue";
+import dateFormate from "@/util/filters.js";
+import exportTable from "@/minixs/exportTable";
+
+const finshData = [
+  { label: "承办单位", prop: "unitName", align: "center" },
+  { label: "上级行直发数", prop: "sjhzfCount", align: "center" },
+  { label: "转直发数", prop: "zzfCount", align: "center" },
+  { label: "合计", prop: "totleCount", align: "center" }
+
+];
+export default {
+
+    // 直发收文统计
+  name: 'StcsSentDirectly',
+  components: {
+    mTable
+  },
+  data() {
+    return {
+      start1:'',
+      end1:'',
+      down: false,
+      pickerOptions: {
+        shortcuts: [
+          {
+            text: "最近一周",
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit("pick", [start, end]);
+            }
+          },
+          {
+            text: "最近一个月",
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+              picker.$emit("pick", [start, end]);
+            }
+          },
+          {
+            text: "最近三个月",
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+              picker.$emit("pick", [start, end]);
+            }
+          }
+        ]
+      },
+      ruleForm: {
+        function: "statisticsDirectReceive",
+        state: 1,
+        startTime: "", //   统计起始日期
+        endTime: "" //    统计结束日期
+      },
+      times: "",
+      tableLoading: false,
+      tableData: [],
+      tableCols: finshData,
+    };
+  },
+  methods: {
+    exportExc(){
+      exportTable.exportExcel("收文直发文统计表",".el-table");
+    },
+    initData() {
+      this.$post
+        .postData(
+          "statisticsDirectReceive",
+          JSON.stringify(this.ruleForm),
+          this.$businessCode.swgl
+        )
+        .then(res => {
+          this.tableData = res.data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    arrow() {
+      this.down = !this.down;
+    },
+    // 选择时间
+    timeChange(rangeTime) {
+      if (!rangeTime || rangeTime == "null" || rangeTime == "undefined") {
+        this.ruleForm.startTime = "";
+        this.ruleForm.endTime = "";
+        return false;
+      }
+       this.ruleForm.startTime = this.start1 = dateFormate.date(Date.parse(this.times[0]));
+        //this.start1 = dateFormate.date(Date.parse(this.times[0]),"YYYY-MM");
+        this.ruleForm.endTime = this.end1 = dateFormate.date(Date.parse(this.times[1]));
+        // this.end1 = dateFormate.date(Date.parse(this.times[1]),"YYYY-MM")
+        // this.ruleForm.endTime = this.ruleForm.endTime.split('-');
+        // this.ruleForm.endTime[2] = parseInt(this.ruleForm.endTime[2])+30;
+        // this.ruleForm.endTime = this.ruleForm.endTime.join('-');
+    },
+    submitForm(formName) {
+      if (this.times) {
+        this.initData();
+      } else {
+        this.$message({
+          type: "error",
+          message: "请选择日期"
+        });
+      }
+    },
+    resetForm(formName) {
+      (this.times = ""),
+        (this.ruleForm.startTime = ""), //   统计起始日期
+        (this.ruleForm.endTime = ""); //    统计结束日期
+    }
+  },
+  created() {
+    //this.initData();
+  }
+};
+</script>
+
+<style lang="less" scoped>
+.btn-writeEnDspc {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #dcdfe6;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  margin-right: 10px;
+  transition: 0.1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+.btn-writeEnDspc:hover {
+  background: #66b1ff;
+  border-color: #66b1ff;
+}
+.mt20 {
+  padding: 20px 0 0 0;
+  position: relative;
+  border: 1px solid #f0f0f0;
+}
+.mtdown {
+  padding: 20px 0 80px 0;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+.down {
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+  text-align: center;
+}
+.mt20end {
+  margin-top: 20px;
+}
+
+.arrowup {
+  text-align: center;
+}
+.table-first {
+  border-bottom: 2px solid #f0f0f0;
+}
+.stcs_table tr {
+  height: 35px;
+  line-height: 35px;
+}
+</style>

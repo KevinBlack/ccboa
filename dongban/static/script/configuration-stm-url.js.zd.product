@@ -1,0 +1,6 @@
+window.PJF = window.PJF || {};
+PJF.constants = PJF.constants || {};
+//PJF各集群不同的常量
+PJF.constants.AUTH_SERVER = 'http://oz.oecip.jh'; //审核群地址
+PJF.constants.MGT_SERVER = 'http://oz.oecip.jh'; //管理集群
+PJF.constants.PUB_SERVER = 'http://oz.oecip.jh'; //公共集群

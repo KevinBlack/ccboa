@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      width: 80%;
+      height: auto;
+      line-height: 1;
+      margin-left: 10%;
+      padding-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .header {
+      width: 100%;
+      height: 90px;
+      line-height: 90px;
+      text-align: center;
+      color: red;
+      font-size: 44px;
+      font-weight: 500;
+      border-bottom: 2px solid red;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .subTitle {
+      line-height: 40px;
+    }
+
+    .table,
+    .table1,
+    .tableCh {
+      width: 100%;
+      border: 1px solid #9ea5b3;
+      overflow: hidden;
+    }
+
+    .table1,
+    .tableCh {
+      border-top: none;
+    }
+
+    .table {
+      border-bottom: none;
+    }
+
+    tr {
+      line-height: 24px;
+    }
+
+    td {
+      padding: 0 5px;
+      border: 1px solid #9ea5b3;
+      word-wrap: break-all;
+    }
+
+    .table td:nth-of-type(odd) {
+      width: 10%;
+      text-align: right;
+    }
+
+    .table td:nth-of-type(even) {
+      width: 40%;
+      text-align: left;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .red:nth-of-type(odd) {
+      margin-right: 20px;
+    }
+
+    .textRight {
+      text-align: right;
+      line-height: 10px;
+    }
+
+    .noRight {
+      text-align: left;
+      line-height: 24px;
+    }
+
+    #tab1>table {
+      width: 100%;
+      border: 1px solid #9ea5b3;
+      overflow: hidden;
+    }
+
+    #tab1>tr {
+      line-height: 24px;
+    }
+
+    #tab1>tr,
+    td {
+      text-align: left;
+      border: 1px solid #9ea5b3;
+    }
+
+    p {
+      margin: 6px 0;
+    }
+
+    .qianF {
+      overflow: hidden;
+    }
+
+    .p1 {
+      float: left;
+      margin-left: 8px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .p2 {
+      float: right;
+      margin-right: 25px;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    .piece {
+      overflow: hidden;
+    }
+
+    .piece .text1 {
+      float: left;
+      margin-left: 8px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .piece .text2 {
+      float: right;
+      margin-right: 25px;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    .beiZh {
+      overflow: hidden;
+    }
+
+    .beiZh .content {
+      float: left;
+      margin-left: 8px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .beiZh .name {
+      float: right;
+      margin-right: 25px;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    .chuanYue {
+      overflow: hidden;
+    }
+
+    .chuanYue .chuanYue1 {
+      float: left;
+      margin-left: 8px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .chuanYue .chuanYue2 {
+      float: right;
+      margin-right: 25px;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    .noShow {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header" id="formHead">
+    formHead <br>
+  </div>
+  <div class="subTitle">
+    <span>当前环节：<span class="red" id="currentNode"> </span></span><span id="currentNowName1">当前处理人：<span class="red"
+        id="currentNowName"></span></span>
+  </div>
+  <table class="table">
+    <tbody id="fbody">
+      <tr>
+        <td style="text-align: right;" id="nameType"></td>
+        <td colspan="3" id="hyTitle"></td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">主办部门</td>
+        <td id="maindept"></td>
+        <td style="text-align: right;">拟稿人</td>
+        <td id="authorCn"></td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">联系电话</td>
+        <td id="tel"></td>
+        <td style="text-align: right;">拟稿日期</td>
+        <td id="draftDate"></td>
+      </tr>
+      <tr id="timeTr">
+        <td style="text-align: right;" id="dateType"></td>
+        <td colspan="3" id="hyTime"></td>
+      </tr>
+      <tr id="adressTr">
+        <td style="text-align: right;" id="adressType"></td>
+        <td colspan="3" id="hyAdress"></td>
+      </tr>
+      <tr id="hostTr">
+        <td style="text-align: right;">主持人</td>
+        <td colspan="3" id="host"></td>
+      </tr>
+      <tr id="unitdeptTr">
+        <td style="text-align: right;">联合单位</td>
+        <td colspan="3" id="unitdept"></td>
+      </tr>
+      <tr id="attendTr">
+        <td style="text-align: right;">出席</td>
+        <td colspan="3" id="attend"></td>
+      </tr>
+      <tr id="attendanceTr">
+        <td style="text-align: right;">列席</td>
+        <td colspan="3" id="attendance"></td>
+      </tr>
+      <tr id="summaryTr">
+        <td style="text-align: right;">摘要</td>
+        <td colspan="3" id="summary"></td>
+      </tr>
+      <!--本部内容 -->
+      <tr id="bbContent">
+        <td style="text-align: right;">会议议题</td>
+        <td id="topic"></td>
+        <td style="text-align: right;">参会部门</td>
+        <td id="joinDept"></td>
+      </tr>
+      <tr id="entrustUnitTr">
+        <td style="text-align: right;">委托承办单位</td>
+        <td colspan="3" id="entrustUnit"></td>
+      </tr>
+      <tr id="wordBody1">
+        <td style="text-align: right;">内容</td>
+        <td colspan="3" id="wordBody"></td>
+      </tr>
+      <tr id="qianFTr">
+        <td style="text-align: right;">签发意见</td>
+        <td colspan="3" id="qianFTd">
+          <div class="chuanYue" id="qianF">
+            <div class="chuanYue1" id="qfOpinion"></div>
+            <div class="chuanYue2">
+              <div class="p2">
+                <span id="qfDeptName"></span>
+                <span style="padding: 0 5px;"></span>
+                <span id="qfUserName"></span>
+                <div class="cyDate" id="qfDate"></div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr id="qianF1Tr">
+        <td style="text-align: right;" id="yjTitle"></td>
+        <td colspan="3" id="qianF1Td">
+          <div class="chuanYue" id="qianF1">
+            <div class="chuanYue1" id="shOpinion"></div>
+            <div class="chuanYue2">
+              <div class="p2">
+                <span id="shDeptName"></span>
+                <span style="padding: 0 5px;"></span>
+                <span id="shUserName"></span>
+                <div class="cyDate" id="shDate"></div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr id="qianF2Tr">
+        <td style="text-align: right;">一次传阅意见</td>
+        <td colspan="3" id="qianF2Td">
+          <div class="chuanYue" id="qianF2">
+            <div class="chuanYue1" id="cyOpinion"></div>
+            <div class="chuanYue2">
+              <div class="p2">
+                <span id="cyDeptName"></span>
+                <span style="padding: 0 5px;"></span>
+                <span id="cyUserName"></span>
+                <div class="cyDate" id="cyDate"></div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr id="qianF3Tr">
+        <td style="text-align: right;">传阅意见</td>
+        <td colspan="3" id="qianF3Td">
+          <div class="chuanYue" id="qianF3">
+            <div class="chuanYue1" id="cyOpinion"></div>
+            <div class="chuanYue2">
+              <div class="p2">
+                <span id="cyDeptName1"></span>
+                <span style="padding: 0 5px;"></span>
+                <span id="cyUserName1"></span>
+                <div class="cyDate" id="cyDate1"></div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right">反馈信息</td>
+        <td colspan="3" id="isFeedback"></td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">传阅说明</td>
+        <td colspan="3" id="cyExplain"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table1">
+    <tbody>
+      <tr>
+        <td style="text-align: right;width: 10%">一次传阅人员</td>
+        <td colspan="3" style="text-align: left;" id="cyry"></td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 10%" rowspan="2">二次传阅人员</td>
+        <td style="text-align: right;width: 10%">未阅</td>
+        <td colspan="2" style="text-align: left;width: 80%;" id="wyPle"></td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 10%">已阅</td>
+        <td colspan="2" id="yyPle"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+<script language="javascript">
+</script>
+
+</html>

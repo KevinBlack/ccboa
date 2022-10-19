@@ -1,0 +1,96 @@
+
+/*要素label样式*/
+.pjf_label_2line,
+.pjf_label{
+	width:205px;
+}
+/*表单样式*/
+.pjf_ul_two/*,
+.pjf_ul_one*/{
+	width:auto !important;
+	width:1000px;
+	min-width: 850px;
+	max-width: 1000px;
+}
+.pjf_ul_one{width: auto;}
+.pjf_ul_two li{
+	width:auto !important;
+	width:47.5%;
+	/*_width:auto;*/
+	min-width:47.5%;/*允许跨列*/
+	margin:2px 3px;
+}
+.pjf_ul_one li{
+	width:auto !important;
+	width:600px;
+	min-width:490px;
+	max-width:600px;/*允许跨列*/
+	margin:2px auto;
+}
+.pjf_win_ul_two{
+	width:610px;	
+}
+.pjf_ul_three li,
+.pjf_win_ul_two li{
+	width:auto !important;
+	width:405px;
+	min-width:405px;/*允许跨列*/
+	margin:2px 3px;
+}
+.pjf_ul_three{
+	margin:0 auto;
+	/*min-width:915px;*/
+	max-width:1250px;
+	display:block;
+}
+
+
+/*大屏弹出框内样式不变*/
+/*要素2行label样式*/
+.window-body-form .pjf_label,
+.window-body-form .pjf_label_2line{
+	width:98px;	
+}
+.window-body-form .pjf_ul_two{
+	width:auto !important;
+	width:800px;
+	min-width: 600px;
+	max-width: 800px;
+}
+.window-body-form .pjf_ul_one{
+	width:auto;
+}
+.window-body-form .pjf_ul_one li,
+.window-body-form .pjf_ul_two li{
+	width:auto !important;
+	width:47.5%;
+	min-width:47.5%;/*允许跨列*/
+	/*max-width: 400px;*/
+	
+}
+.window-body-form .pjf_win_ul_two{
+	width:610px;
+	
+}
+.window-body-form .pjf_ul_three li,
+.window-body-form .pjf_win_ul_two li{
+	width:auto !important;
+	width:285px;
+	min-width:285px;/*允许跨列*/
+	
+}
+
+.window-body-form .pjf_ul_three{
+	min-width:915px;
+	max-width:1005px;
+}
+/*ie6下表单按钮过多时的修复*/
+.window-body-form .pjf_ul_three li.width_auto,
+.window-body-form .pjf_ul_two li.width_auto{
+	width:auto;
+	min-width:auto;
+	float:none;
+	clear:both;
+	display: block;
+}
+	

@@ -1,0 +1,80 @@
+.shoucangTable {
+    font-family: 宋体;
+    font-size: 20px;
+    width: 1100px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    word-break: break-all;
+    display: none;
+}
+.shoucangTable caption{
+    font-size: 35px;
+    text-align: center;
+    line-height: 100px;
+    width: 1100px;
+}
+.shoucangTable>tr>td{
+    border: solid #000 1px;
+    padding: 6px;
+    line-height: 1.6;
+}
+.shoucangTable>tr>td:first-child{
+    width: 20%;
+    text-align: center;
+    vertical-align: middle;
+}
+.shoucangTable>tr>td:last-child{
+    width: 80%;
+    text-align: left;
+    vertical-align: middle;
+}
+.shoucangTable>tr>td div{
+    /* font-size: 26px; */
+    font-size: 20px;
+}
+.shoucangTable>tr>td div .adviceInfo{
+    font-size: 20px;
+}
+.shoucangTable .el-table .cell{
+    line-height: 1.4;
+}
+.shoucangTable .command_file{
+    display: flex;
+    justify-content: space-between;
+}
+.shoucangTable .command_file .name.down{
+    font-size: 14px;
+    font-weight: bold;
+}
+.formHeader,.bank_dispach_content{
+    position: relative;
+    background-color: #f0f5fa;
+    z-index: 1;
+}
+.el-textarea .el-textarea__inner {
+    font-family: 'Microsoft Yahei','SimSun','Arial','Helvetica','sans-serif';
+    color: #000;
+}
+.cur_box{
+    width: 97%;
+    margin-left: 3%;
+    height: 40px;
+    border: 1px solid #F60;
+    background: #fef7e7;
+}
+.cur_box p span{
+    color:#F60 ;
+}
+.el-message-box{
+    min-width: 420px;
+    max-width: 60%;
+    width: auto;
+}
+.command_wrap>.name{
+    width: auto !important;
+    max-width:42% !important;
+  }

@@ -1,0 +1,665 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video, input, option{
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font-weight: normal;
+   vertical-align: baseline;
+   box-sizing: border-box;
+ }
+ @page{
+   margin: 0mm;
+   size: auto;
+ }
+ .printButton {
+   position: absolute !important;
+   top: 5% !important;
+   left: 3% !important;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+ footer, header, menu, nav, section {
+   display: block;
+ }
+ /* .el-input__inner[readonly]{
+   background-color: #e4e7ed52 !important;
+ }
+ .el-textarea__inner[readonly]{
+   background-color: #e4e7ed52 !important;
+ } */
+ /* 2022-2-10样式修改 */
+.uploader-btn {
+  font-weight: bolder !important;
+  color: black !important;
+}
+.th224{
+  height:10px;
+}
+ /*
+ 绿灯测试样式优化 start 
+ */
+ .printTableList>tbody>tr>td{
+   font-family: SimSun,Arial,Helvetica,sans-serif !important;
+   font-size: 19px !important;
+ }
+ .pad_yj10{
+   /* white-space: pre-wrap; */
+   padding: 0;
+   margin-bottom: 6px;
+   white-space: pre-line;
+   word-break: break-all;
+   font-family: SimSun,Arial,Helvetica,sans-serif !important;
+   font-size: 19px !important;
+ }
+ .pad_yj11 {
+   line-height: 26px !important;
+ }
+ .fix_height>.dimi_btn{
+     text-align: right;
+     cursor: pointer;
+     position: absolute;
+     top: 0;
+     right: -55px;
+     border: none !important;
+   }
+ .el-form-item--small .el-form-item__error{
+     padding-top: 0px !important;
+   }
+ .bank_dispach_content .bank_dispach_file .bank_dispach_file_tit{
+     height: 40px !important;
+     line-height: 25px !important;
+   }
+ .pr45 {
+   padding-right: 45px;
+ }
+ .disable_w {
+   width: 100%;
+ }
+ .el-table{
+   color:#000;
+ }
+ .el-table th>.cell{
+   color: #000;
+ }
+ .el-table .warning-row{
+   color:red;
+ }
+ .el-table .warning-cell {
+   color: blue;
+ }
+ .el-input--small .el-input__inner{
+   color: #000;
+   font-size: 14px;
+ }
+ .el-textarea__inner{
+   font-size: 14px;
+   font-family:Microsoft Yahei,SimSun,Arial,Helvetica,sans-serif;
+ }
+ .el-table--medium td, .el-table--medium th {
+   padding: 5px 0;
+ }
+ .tablePrint{
+   padding:30px;
+ }
+ .printTableList tr{
+   height: 45px !important;
+ }
+ .deleteButton_gly{
+  float: right;
+ }
+ /*
+ 绿灯测试样式优化 end
+ */
+ /* 2021-9-27修改样式start */
+.newClassForDialog .el-form-item{
+  margin-left: -24px !important;
+ }
+.newClassForDialog .el-form-item__label{
+  padding-left: 50px !important;
+}
+.newClassForDialog .el-input{
+  width: 95% !important;
+}
+ /* 2021-9-27修改样式end */
+ body {
+   line-height: 1;
+ } 
+ 
+ blockquote, q {
+   quotes: none;
+ }
+ 
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+   content: none;
+ }
+ 
+ table {
+   border-collapse: collapse;
+   border-spacing: 0;
+ }
+ /* 2020-12-2 wl created CSS */
+ .el-date-editor--daterange{
+   width: auto !important;
+ }
+ .bank_dispach_content>.bank_dispach_file {
+   width: 92% !important;
+   height: auto !important;
+   margin: 0 auto 20px !important;
+   background-color: #ffffff14 !important;
+   border: 1px solid #ccc !important;
+   padding-bottom: 40px !important;
+ }
+ .bank_dispach_content>.bank_dispach_file .bank_dispach_file_part {
+   width: 98% !important;
+   height: auto !important;
+   margin: 0 auto !important;
+ }
+ .bank_dispach_content>.bank_dispach_side_nav{
+   left: 3% !important;
+ }
+ .nav{
+   height:80px !important;
+ }
+ .el-input__inner:hover{
+   border: 1px solid #8996af !important;
+ }
+ .el-textarea__inner:hover{
+   border: 1px solid #8996af !important;
+ }
+ .grid_comtent>.el-button--default{
+   border: 1px solid #fff !important;
+   background: #0563c8 !important;
+   color: #fff !important;
+   /* color: #409EFF !important;
+   background: #ecf5ff !important;
+   border-color: #b3d8ff !important; */
+ }
+ .bank_dispach_content>.el-form-item--mini.el-form-item, .el-form-item--small.el-form-item {
+     margin-bottom: 13px !important;
+ }
+
+.mtJ20{
+   margin-top: -20px !important;
+}
+.mtJ20>.clearfix{
+  clear: both;
+  padding-bottom: 71px;
+}
+.mt20 {
+  padding: 10px 0 0 0 !important;
+  position: relative !important;
+  border: 1px solid #f0f0f0 !important;
+}
+.is10{
+  margin: 20px 0 !important;
+}
+.is3{
+  margin: 0 !important;
+}
+.glymt10{
+  margin-top: 4px !important;
+}
+ .el-input.is-disabled .el-input__inner{
+     background-color: #f1f6fa !important;
+     color: #000 !important;
+     font-family: Microsoft Yahei,SimSun,Arial,Helvetica,sans-serif;
+ }
+ .bank_dispach_file>.el-input.is-disabled .el-input__inner{
+   background: #FFF !important;
+   border: 1px solid #DCDFE6 !important;
+   color: #000 !important;
+ }
+ .bank_dispach_file>.el-textarea.is-disabled .el-textarea__inner {
+     background-color: #f1f6fa!important;
+     color: #000 !important;
+ }
+ .bank_dispack_side .grid_comtent .bank_grid_comtent_active:hover{
+   border: 1px solid #333333 !important;
+ }
+ .grid_comtent>.el-button--default:hover{
+   background-color: #103ebd !important;
+   transform:scale(1.1) !important;
+ }
+ .bank_dispach_content .bank_dispach_side_nav{
+   margin-left: -1% !important;
+   width: 4% !important;
+ }
+ .bank_dispach_content .bank_dispach_side_nav a{
+   border-radius: 5px !important;
+   font-size: 14px !important;
+   font-weight: 400 !important;
+   width: 50% !important;
+ }
+ .bank_dispach_content>.bank_dispach_file .bank_dispach_file_part .bank_dispach_annotation{
+   margin: 20px 0 0 !important;
+ }
+ /* END */
+ /*附件样式 */
+ .command_wrap>.name{
+   width: auto !important;
+   max-width:45% !important;
+ }
+ /* 打印处理单样式 */
+ .tablePrint{
+   padding-bottom: 30px;
+ }
+ .title-h1{
+   margin-top: 5% !important;
+ }
+ .print_zr{
+   height: auto !important;
+   height: 100px !important;
+   min-height: 100px !important;
+ }
+ .print_zr td{
+   word-break: break-all;
+ }
+ .printcy_zr{
+   height: auto !important;
+   height: 32px !important;
+   min-height: 32px !important;
+ }
+ /* custom */
+ a {
+   color: #7e8c8d;
+   text-decoration: none;
+   -webkit-backface-visibility: hidden;
+ }
+ .basecolor{
+   color: #409EFF;
+ }
+ li {
+   list-style: none;
+ }
+ 
+ /*::-webkit-scrollbar {
+     width: 5px;
+     height: 5px;
+ }*/
+ ::-webkit-scrollbar {
+   display: none;
+ }
+ 
+ ::-webkit-scrollbar-track-piece {
+   background-color: rgba(0, 0, 0, 0.2);
+   -webkit-border-radius: 6px;
+ }
+ 
+ ::-webkit-scrollbar-thumb:vertical {
+   height: 5px;
+   background-color: rgba(45, 45, 45, 0.7);
+   -webkit-border-radius: 6px;
+ }
+ 
+ ::-webkit-scrollbar-thumb:horizontal {
+   width: 5px;
+   background-color: rgba(45, 45, 45, 0.7);
+   -webkit-border-radius: 6px;
+ }
+ .el-scrollbar__thumb{
+   background-color: rgba(54,54,54, 0.3);
+ }
+ .el-scrollbar__thumb:hover{
+   background-color: rgba(54,54,54, 0.5);
+ }
+ 
+ html, body {
+   width: 100%;
+   height: 100%;
+ }
+ 
+ body {
+   -webkit-text-size-adjust: none;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ }
+ 
+ 
+ /**{
+   -webkit-touch-callout:none;  
+   -webkit-user-select:none; 
+   -khtml-user-select:none; 
+   -moz-user-select:none;
+   -ms-user-select:none; 
+   user-select:none;
+ }*/
+ .el-form-item__label{
+   color: #000;
+ }
+ .el-radio__input.is-disabled+span.el-radio__label{
+   color: #000;
+   border-color: #000;
+ }
+ .el-radio__input.is-disabled.is-checked .el-radio__inner::after{
+  color: #000;
+  border-color: #000;
+   background-color: #444446;
+ }
+ .el-radio__input.is-disabled .el-radio__inner, .el-radio__input.is-disabled.is-checked .el-radio__inner{
+  border-color: #000;
+  color: #000;
+   background-color: #ffffff;
+   border-color: #383535;
+ }
+ .el-button.is-disabled.is-plain, .el-button.is-disabled.is-plain:focus, .el-button.is-disabled.is-plain:hover{
+  border-color: #000;
+  color: #000;
+ }
+ .adviceInfo{
+   color: #000!important;
+ }
+ input,textarea {
+   -webkit-user-select:auto; /*webkit浏览器*/
+ }
+ .m10{
+   margin-top: 10px !important;
+ }
+ .mb10{
+   margin-bottom: 10px !important;
+ }
+ .s-tip-t-gtey{
+   font-size: 12px;
+   color: #7e8c8d;
+ }
+ .txtCenter {
+   text-align: center;
+ }
+ .txtRight {
+   text-align: right;
+ }
+ .mgn-b-10 {
+   margin-bottom: 10px;
+ }
+ .mrg-b-14 {
+   margin-bottom: 14px;
+ }
+ .mrg-b-20 {
+   margin-bottom: 20px;
+ }
+ .dis-block {
+   display: block;
+ }
+ 
+ .el-dialog {
+   width: 60% !important;
+   max-width: 960px;
+ }
+ .el-dialog__body{
+   padding: 10px;
+ }
+ .el-dialog__header {
+   background-color: #409EFF;
+ }
+ .el-dialog__title {
+   color: #fff;
+   font-weight: 700;
+ }
+ .el-dialog__headerbtn .el-dialog__close {
+   color: #fff;
+   font-weight: 800;
+ }
+ .el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close {
+   color: #fff;
+ }
+ .el-input.is-disabled .el-input__inner{
+   background-color: #fff !important;
+   color: #000 !important;
+ }
+ .el-textarea.is-disabled .el-textarea__inner{
+   background-color: #fff !important;
+   color: #000 !important;
+ }
+ .fix_height {
+   display: flex;  
+   /* padding-bottom: 20px; */
+ }
+ .fix_height .el-textarea__inner{
+   /* height: 40px;
+   line-height: 40px; bug7580*/
+   padding: 0 14px;
+   flex: 1;
+ }
+ .fix_height .d_b100 {  
+   width: 100%;
+ }
+ .fix_height .d_f1 {
+   flex: 1;
+ }
+ .bank_dispack_side {
+   height: 70px;
+   background: #409eff;
+ }
+  
+ /* 意见 */
+ .pad_lr10 {
+   padding: 0 10px;
+ }
+ /* .pad_yj10{
+   padding:10px;
+ } */
+ .pd_yj_useTime{
+   text-align: right;
+ }
+ .d_flex>.el-textarea.is-disabled, .d_flex>.el-textarea__inner {
+     border: none !important;
+     resize: none;
+   }
+   .d_flex .adviceInfo {
+   font-size: 12px;
+   text-align: right;
+   padding-right: 10px;
+ }
+ .el-input.is-disabled .el-input__inner{
+   background-color: #e4e7ed52 !important;
+   color: #000 !important;
+ }
+ .el-textarea.is-disabled .el-textarea__inner{
+   background-color: #e4e7ed52 !important;
+   color: #000 !important;
+ }
+ .el-loading-mask{
+   background:none;
+ }
+ .el-textarea__inner {
+   min-height: 80px !important;
+ }
+ .el-scrollbar__bar{
+   opacity: 1;
+   z-index: 99;
+ }
+ .el-message-box{
+   padding: 10px 20px 20px;
+ }
+ 
+ /*发文依据*/
+ .border_yiju {
+   border: 1px solid #e0e0e0;
+   border-radius: 4px;
+   padding: 0 10px;
+ }
+ .btn_delImport {
+   text-align: right !important;
+ }
+ .ckyjbt {
+   width: 20%;
+   padding-right: 1em;
+   text-align: right;
+   line-height: 40px;
+ }
+ /*效能看板tooltip*/
+ .tooltipWrapper{ 
+   background-color: rgba(2, 114, 154, 0.9) !important;
+ }
+ 
+ 
+ 
+ .el-menu--popup-bottom-start {
+     margin-left: 50px !important;
+ }
+ /*可输入框颜色*/
+ 
+ input::-ms-input-placeholder{
+   color: #8996af!important;
+ }
+ input::-webkit-input-placeholder{
+   color:#8996af!important;
+ }
+ textarea::-ms-input-placeholder{
+   color: #8996af!important;
+ }
+ textarea::-webkit-input-placeholder{
+   color:#8996af!important;
+ }
+ 
+ 
+ /* 附件 列表 style */
+ .file_list_box {
+   height: 200px;
+   padding: 20px;
+   overflow: scroll;
+   margin: 20px 0 0 130px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+ }
+ 
+ .file_list_box .command_file {
+   display: flex;
+   /* justify-content: space-between; */
+   min-width: 300px;
+   font-size: 14px;  
+ }
+ .file_list_box .command_file .one_btn{
+   width: 80px;
+   height: 42px;
+   line-height: 42px;
+ }
+ .file_list_box .command_file span {
+   white-space: nowrap;
+   height: 42px;
+   line-height: 42px;
+   display: inline-block;
+   text-overflow: ellipsis;
+   /* width: 200px; */
+   overflow: hidden;
+ }
+ .file_list_box .command_file .order {
+   /* width: 30px; */
+   flex: none;
+ }
+ .file_list_box .command_file .down {
+   width: 550px;
+   padding: 0 50px 0 10px;
+   cursor: pointer; 
+   flex: auto;
+ }
+ .file_list_box .command_file .down:hover {
+   color: #3b85ef;
+ }
+ .file_list_box .command_file .name {
+   /* min-width: 60px; */
+   padding: 0 10px;
+ }
+ .file_list_box .command_file .time {
+   min-width: 160px;
+   padding: 0 10px;
+ }
+ .file_list_box .command_file .btns {
+   /* width: 300px; */
+   height: 42px;
+   line-height: 42px;
+   white-space: nowrap;
+ }
+ .file_list_box .command_file .btns span {
+   width: auto;
+   height: auto;
+   display: unset;
+   line-height: unset;
+   overflow: unset;
+ }
+ 
+ .colorBlack {
+   color: #000;
+ }
+ .colorLink {
+   color: #3b85ef;
+ }
+ .colorRed {
+   color: red;
+ }
+ .bank_dispach_annotation {
+   border: 1px solid red !important;
+ }
+ .bank_dispach_annotation_current span {
+   color: red !important;
+ }
+ .cur_box{
+   border: 1px solid red !important;
+ }
+ .cur_box .cur_sess span{
+   color: red !important;
+ }
+ .cur_box .cur_sess .headmsg{
+   color: red !important;
+ }
+ .dimi_btn{
+   color: #000 !important;
+   border: 1px solid #000 !important;
+ }
+ .dimi_btn1{
+   color: #000 !important;
+   border: 1px solid #000 !important;
+ }
+ .dingMiStyle>.el-radio,.dingMiStyle>.el-radio__input{
+     line-height: 2;
+     white-space: inherit!important;
+ }
+ .el-tooltip__popper.is-dark {
+   max-width: 90% !important;
+ }
+
+.el-table .cell{
+  padding: 0px 3px 0 3px !important;
+}
+
+.btn_mng_del{
+  background-color: crimson !important;
+  border-color: crimson !important;
+}
+.newSplit{
+  display: none;
+}
+.tableForPrint{
+  width: 18.3cm!important;
+}
+.tableForPrint tr{
+  min-height: 1.2cm!important;
+  line-height: 1.2cm!important;
+}
+.tableForPrint .printTableList{
+  width: 100%!important;
+}
+
+.el-message-box__btns .el-button:first-child{
+  transform: translateX(75px)!important;
+}
+.el-message-box__btns .el-button:last-child{
+  transform: translateX(-60px)!important;
+}
+.v-modal {
+  opacity: 0.2 !important;
+}

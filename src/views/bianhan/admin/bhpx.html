@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {width: 80%;height: auto;line-height: 1;margin-left: 10%;padding-bottom: 40px;font-size: 16px;}
+    .header {width: 100%;height: 90px;line-height: 90px;text-align: center;color: red;
+      font-size: 44px;font-weight: 500;border-bottom: 2px solid red;text-overflow: ellipsis;
+      overflow: hidden;}
+    .subTitle {line-height: 40px;}
+    .table{width: 100%;border: 1px solid #9ea5b3;overflow: hidden;}
+    tr {line-height: 24px;}
+    td {padding: 0 5px;border: 1px solid #9ea5b3;word-wrap: break-all;}
+    .table td:nth-of-type(odd) {text-align: right;}
+    .table td:nth-of-type(even) {text-align: left;}
+    .red {color: red;}
+    .red:nth-of-type(odd) {margin-right: 20px;}
+    .textRight {text-align: right;line-height: 10px;}
+    .noRight {text-align: left;line-height: 24px;}
+    #tab1>table {width: 100%;border: 1px solid #9ea5b3;overflow: hidden;}
+    #tab1>tr {line-height: 24px;}
+    #tab1>tr,td {text-align: left;border: 1px solid #9ea5b3;}
+    p {margin: 6px 0;}
+    p span:last-child,div span:nth-child(2){margin-left: 8px;}
+    .piece {overflow: hidden;}
+    .piece .text1 {float: left;margin-left: 8px;margin-top: 10px;width: 100%;}
+    .piece .text2 {float: right;margin-right: 25px;margin-bottom: 8px;text-align: right;}
+    .beiZh {overflow: hidden;}
+    .beiZh .content {float: left;margin-left: 8px;margin-top: 10px;width: 100%;}
+    .beiZh .name {float: right;margin-right: 25px;margin-bottom: 8px;text-align: right;}
+    dl{overflow: hidden;margin: 3px 0;border: 1px solid #9ea5b3;
+    border-left: 0;padding: 0 32px 0 14px;border-right: 0;}   
+    dl:first-child{border-top: 0;margin-top: 0;}
+    dl:last-child{border-bottom: 0;margin-bottom: 0;}
+    dd{float: left;width: 20%;margin: 0;}
+    dt{    float: right;
+    width: 78%;
+    position: relative;
+    border-left: 1px solid #9ea5b3;
+    padding-left: 10px;}
+    dt::before{
+      content: '';
+      position: absolute;
+      left: 3px;
+      width: 1px;
+      height: 100%;
+      background-color: #9ea5b3;
+    }
+    .alignright{text-align: right;}
+  </style>
+</head>
+
+<body>
+  <div class="header" id="header">formHead <br></div>
+  <div class="subTitle" id="subTitle">当前环节：<span class="red" id="subTitleRed"> currentNode</span></div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">拟稿人</td>
+        <td colspan="4" id="draftUser">draftUser</td>
+        <td style="text-align: right;width: 16%;" colspan="2">反馈截止日期</td>
+        <td colspan="4" id="phone">phone</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">编号</td>
+        <td colspan="4" id="documentNo">documentNo</td>
+        <td style="text-align: right;width: 16%;" colspan="2">部内便函</td>
+        <td colspan="4" id="bnbh">bnbh</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">主送</td>
+        <td colspan="10" id="main">main</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">抄送</td>
+        <td colspan="10" id="copy">copy</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">内容</td>
+        <td colspan="10" id="content">content</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">拟稿部门</td>
+        <td colspan="4" id="draftDepartmentOne">draftDepartmentOne</td>
+        <td style="text-align: right;width: 16%;" colspan="2">拟稿日期</td>
+        <td colspan="4" id="draftTime">draftTime</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">拟稿人</td>
+        <td colspan="4" id="draftUser">draftUser</td>
+        <td style="text-align: right;width: 16%;" colspan="2">联系电话</td>
+        <td colspan="4" id="phone">phone</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">移动端展示</td>
+        <td colspan="10" id="showApp">showApp</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">签发意见</td>
+        <td colspan="10">
+          <div class="piece" id='q-piece'>
+            <div class="text1" id='q-text1'>签发内容</div>
+            <div class="text2" id='q-text2'>
+              <span id='q-departmentName'>departmentName</span><span id='q-userName'>userName</span>
+              <div class="date" id='q-createTime'>createTime</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">审核意见</td>
+        <td colspan="10">
+          <div class="piece" id='s-piece'>
+            <div class="text1" id='s-text1'>审核内容</div>
+            <div class="text2" id='s-text2'>
+              <span id='s-departmentName'>departmentName</span><span id='s-userName'>userName</span>
+              <div class="date" id='s-createTime'>createTime</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">传阅意见</td>
+        <td colspan="10">
+          <div class="piece" id='c-piece'>
+            <div class="text1" id='c-text1'>
+              传阅意见内容
+               <p>附件</p>
+            </div>       
+            <div class="text2" id='c-text2'>            
+              <span id='c-departmentName'>departmentName</span><span id='c-userName'>userName</span>
+              <div class="date" id='c-createTime'>createTime</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">备注</td>
+        <td colspan="10">
+          <div class="piece" id='r-piece'>
+            <div class="text1" id='r-text1'>备注内容</div>
+            <div class="text2" id='r-text2'>
+              <span id='r-departmentName'>departmentName</span><span id='r-userName'>userName</span>
+              <div class="date" id='r-createTime'>createTime</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 16%;" colspan="2">承办单位</td>
+        <td colspan="10" style="padding: 0;">
+          <dl>
+            <dd>部门名称</dd>
+            <dt>意见</dt>
+          </dl>
+          <dl id="departmentOpionList">
+            <dd><p id="departmentName">承办部门名称</p></dd>
+            <dt>
+              <p id="departmentOpion">承办部门意见</p>
+              <p class="alignright"><span id="departmentName1">departmentName</span><span id="userName1">userName</span></p>
+              <p class="alignright" id="createTime1">createTime</p>
+              <p id="file1">附件</p>
+            </dt>  
+          </dl>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right;width: 8%;" rowspan="2">传阅人员</td>
+        <td style="text-align: right" colspan="1">未阅</td>
+        <td colspan="7" style="text-align: left;" id="wyPle">wyPle</td>
+      </tr>
+      <tr>
+        <td style="text-align: right" colspan="1">已阅</td>
+        <td colspan="7" id="yyPle">yyPle</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="subTitle">
+    <div style="color: red;" onclick="turn('tab1','lcgz','流程跟踪');"><span class="dqhj" id="lcgz">◇流程跟踪[展开]</span></div>
+  </div>
+  <div id="tab1" style="display: none;" align="center">
+    <table align="center" style="word-wrap: break-all" id="tblList">
+      <tbody id="tbody">
+        <tr>
+          <th>序号</th>
+          <th width="20%" style="text-align: center;">处理环节</th>
+          <th width="20%" style="text-align: center;">操作时间</th>
+          <th width="20%" style="text-align: center;">处理人</th>
+          <th width="20%" style="text-align: center;">处理记录</th>
+        </tr>
+        <tr>
+          <th>index</th>
+          <th width="20%" style="text-align: center;">NODE</th>
+          <th width="20%" style="text-align: center;">TM</th>
+          <th width="20%" style="text-align: center;">EXCNM</th>
+          <th width="20%" style="text-align: center;">DSC</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<script language="javascript">
+  function turn(s, infoID, info) {
+    try {
+      if (document.all(s).style.display == 'none') {
+        document.all(s.toString()).style.display = '';
+        document.all(infoID).innerHTML = '◇' + info + '[展开]';
+      } else {
+        document.all(s.toString()).style.display = 'none';
+        document.all(infoID).innerHTML = '◆' + info + '[折叠]';
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+<template>
+  <div class="scheduleDetail">
+    <el-button type="primary" @click="goBack" style="margin-bottom: 10px">返回上一页</el-button>
+    <el-row :gutter="10" v-if="dayWorks.length>0">
+      <el-col :span="12" v-for="(item, index) in dayWorks" :key="index" class="content">
+        <el-card class="box-card">
+          <div>
+            <p>时间：{{item.startTime}} - {{item.endTime}}</p>
+            <p>地点：{{item.activeAddress}}</p>
+            <p>名称：{{item.title}}</p>
+          </div>
+          <div style="padding-top: 20px">
+            <el-button type="primary" @click="toEdit(item.id)">编辑</el-button>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+    <el-row v-if="dayWorks.length=='0'" style="text-align: center;">
+        <el-col>{{time}} 暂无活动安排</el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "partyCommitteeActivitylist",
+  data() {
+    return {
+        time:this.$route.query.day,
+      dayWorks: []
+      // showLoading: false
+    };
+  },
+  methods: {
+    goBack() {
+        this.$router.push('/secretary/leaderActivity/partCommitteeActivity')
+    },
+    loadData() {
+      // this.showLoading = true
+      this.$api.activety
+        .GPartylist({
+          dataTime: this.$route.query.day,
+          userId:this.$route.query.userId?this.$route.query.userId:''
+        })
+        .then(res => {
+          console.log(res,'u8u8u8u8111');
+          // this.showLoading = falseq
+          if (res.code === "SUCCESS") {
+            this.dayWorks = res.data.list;
+          } else {
+            // this.showLoading = false
+            this.$message.error(res.message);
+          }
+        })
+        .catch(() => {
+          // this.showLoading = false
+          console.log("error");
+        });
+    },
+    toEdit(item) {
+      this.$intent.goNewPage(this, {
+        path: "/secretary/leaderActivity/topTheform",
+        query: { id: item }
+      });
+    }
+  },
+  created() {
+    this.loadData();
+  }
+};
+</script>
+
+<style scoped lang="less">
+.content {
+  margin-bottom: 10px;
+  .box-card {
+    p {
+      padding: 8px 0;
+      font-size: 14px;
+    }
+  }
+}
+</style>

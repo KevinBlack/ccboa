@@ -1,0 +1,483 @@
+<template>
+  <div>
+    <el-row>
+      <el-col>
+        <el-form
+          :model="ruleForm"
+          ref="ruleForm"
+          label-width="100px"
+          class="demo-ruleForm mt20"
+          :class="{mtdown:down}"
+        >
+          <el-row>
+            <el-col :span="8">
+              <el-form-item label="统计日期">
+                <div class="block">
+                  <el-date-picker
+                    @change="timeChange"
+                    v-model="times"
+                    unlink-panels
+                    value-format="yyyy-MM-dd"
+                    size="small"
+                    type="daterange"
+                    range-separator="-"
+                    start-placeholde="开始日期"
+                    end-placeholde="结束日期"
+                  ></el-date-picker>
+                </div>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="主办部门" prop="deptName">
+                <el-input v-model="ruleForm.deptName" readonly="readonly" placeholder="请选择">
+                  <el-button slot="append" @click="getTreeData('chen')" icon="el-icon-plus"></el-button>
+                </el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-col v-if="!down" class="arrowup">
+                <el-button type="primary" @click="initData">开始统计</el-button>
+                <el-button type="primary" @click="resetForm">重置</el-button>
+              </el-col>
+            </el-col>
+          </el-row>
+        </el-form>
+      </el-col>
+
+      <el-col :span="24" style="padding:20px;">
+        <table class="stcs_table">
+          <tr class="table-first">
+            <td>
+              <h3 style="font-weight: bold;">统计结果</h3>
+            </td>
+            <td class="txtRight">
+              <el-button
+                style="text-align:right;"
+                size="small"
+                @click="exportExc"
+                v-preventClick
+                class="mrg-b-20"
+              >导 出</el-button>
+            </td>
+          </tr>
+          <tr>
+            <td>督办请示事项办理情况统计</td>
+          </tr>
+          <tr>
+            <td>
+              统计日期：{{startTime }}
+              <span v-if="startTime">至</span>
+              {{endTime }}
+              <br />
+              <span style="font-weight: 700;">说明：</span>
+              <br />1.本统计为按自然月整月进行统计，例如：统计区间为1月至6月，则统计1月1日至6月30日的数据。
+              <br />2.如需要本月数据，统计结果中的办结数据为统计日前一天的数据，流转数据为实时数据。例如：统计区间为1月至本月，统计日为本月10日，则统计1月1日至本月9日的办结数据和1月1日至本月10日的流转数据。
+            </td>
+          </tr>
+        </table>
+      </el-col>
+      <el-col style="margin: 20px 0;">
+           <el-scrollbar style="height:100%;">
+                               <!-- :header-cell-style="{background:'#07628e', color:'#fff',border:'1px soild #ccc'}"> -->
+
+                  <!-- :header-cell-style="{background:'rgba(255, 255, 255, 0.15)', color:'#fff',fontWeight:'700',border:'1px soild #ccc'}" -->
+        <el-table :data="tableData" style="width: 100%" :header-cell-style="{background:'#eef1f6',color:'#606266'}">
+          <el-table prop="name" type="index" label="序号"></el-table>
+          <el-table-column prop="unitShort" label="主办部门"></el-table-column>
+          <el-table-column prop="totleCount" label="承办件数
+
+
+
+"></el-table-column>
+          <el-table-column prop="bjCount" label="办结件数
+"></el-table-column>
+          <el-table-column prop="wbjCount" label="未办结件数
+"></el-table-column>
+          <el-table-column prop="bjRate" label="办结率
+"></el-table-column>
+          <el-table-column prop="avgTime" label="平均办理时间
+"></el-table-column>
+        </el-table>
+           </el-scrollbar>
+      </el-col>
+
+      <el-col :span="24" style="padding:20px ;">
+        <table class="stcs_table">
+          <tr>
+            <td v-if="true">
+              <br />
+              <span style="font-weight: 700;">备注：</span>
+
+  <br />
+（1）办理时间：计算“办结时间”与“督办时间”相差的工作时间，每跨过一次1:00或13:00，即加0.5天，不到1次即完成的计0天。只计算工作日。
+              <br />（2）平均办理时间 = 所有承办的请示性文件办理时间之和 / 承办件数。
+              <br />
+（3）办结率 = 办结件数 / 承办件数 *100%。
+
+            </td>
+
+            <td v-else>
+              <br />
+              <span style="font-weight: 700;">说明：</span>
+              <br />（1）系统外：建行以外的其他单位，如人民银行、银监会等 。（起草实物发文并且实物类型包含系统外的文件）
+              <br />注：实物收文发给本级机构的实物收文记录在“行内收文”中；起草的实物收文实物类型包含行内的文件也记录在“行内收文”中
+            </td>
+          </tr>
+        </table>
+      </el-col>
+    </el-row>
+    <treeCofig
+      :treeData="treeData"
+      :canTab="canTab"
+      :loadingTree="loadingTree"
+      :hasRadio="hasRadio"
+      :dialogType="dialogType"
+      :dialogTypeNow="dialogTypeNow"
+      :dialogTit="dialogTit"
+      :checkIds="checkIds"
+      :checkData="checkData"
+      :singelCheckF="singelCheckF"
+      :dialogState="dialogState"
+      :offenUse="offenUse"
+      :fromdata="ruleForm"
+      :seletOptionsData="seletOptionsData"
+      @showCompDialog="showCompDialog"
+      :treeTradeCode="treeTradeCode"
+    ></treeCofig>
+  </div>
+</template>
+
+<script>
+import dateFormate from "@/util/filters.js";
+import treeCofig from "@/components/tree/tree-fawen";
+import exportTable from "@/minixs/exportTable";
+export default {
+  // 按收文类型统计
+  name: "StcsRecordType",
+  components: {
+    // mTable
+    treeCofig
+  },
+  data() {
+    return {
+      tableData: [],
+      down: false,
+      // 承办单位
+      deptIdData: { function: "unitTreeAll", openSubDept: true },
+      pickerOptions: {
+        shortcuts: [
+          {
+            text: "最近一周",
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit("pick", [start, end]);
+            }
+          },
+          {
+            text: "最近一个月",
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+              picker.$emit("pick", [start, end]);
+            }
+          },
+          {
+            text: "最近三个月",
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+              picker.$emit("pick", [start, end]);
+            }
+          }
+        ]
+      },
+         startTime:'',
+         endTime:"",
+      ruleForm: {
+        function: "statisticsQsSupervise",
+        state: 1,
+        startTime: "", //   统计起始日期
+        deptId: "",
+        deptName: "",
+        endTime: "" //    统计结束日期
+      },
+      times: "",
+      tableLoading: false,
+      activeName: "tabs-all",
+      isEnd: false,
+      //tree
+      treeData: [],
+      singelCheckF: true,
+      checkIds: [], //列表
+      checkData: [], //选中数据 回显时使用
+      chenCheckData: [], //承办选中数据
+      shouCheckData: [], //收文选中数据
+      laiCheckData: [], //来文选中数据
+      canTab: false, //标示是否左右三列布局
+      offenUse: false, //标示常用设置
+      dialogType: "", //弹窗类型
+      seletOptionsData: [], //弹窗下拉框数据
+      dialogState: false,
+      dialogTit: "", // 弹框标题
+      hasRadio: false, //是否有单选
+      dialogTypeNow: "", //当前弹窗类型
+      loadingTree: false
+    };
+  },
+  methods: {
+    exportExc() {
+      exportTable.exportExcel("督办请示事项办理情况统计", ".el-table");
+    },
+    timeChange(events) {
+      this.ruleForm.startTime = this.startTime = dateFormate.date(Date.parse(this.times[0]));
+      //this.start1 = dateFormate.date(Date.parse(this.times[0]), "YYYY-MM");
+      this.ruleForm.endTime = this.endTime = dateFormate.date(Date.parse(this.times[1]));
+      // this.end1 = dateFormate.date(Date.parse(this.times[1]), "YYYY-MM");
+      // this.ruleForm.endTime = this.ruleForm.endTime.split("-");
+      // this.ruleForm.endTime[2] = parseInt(this.ruleForm.endTime[2]) + 30;
+      // this.ruleForm.endTime = this.ruleForm.endTime.join("-");
+      //  this.startTime =
+      //   this.ruleForm.startTime.split("-")[0] +
+      //   "-" +
+      //   this.ruleForm.startTime.split("-")[1];
+      // this.endTime =
+      //   this.ruleForm.endTime.split("-")[0] +
+      //   "-" +
+      //   this.ruleForm.endTime.split("-")[1];
+    },
+    // 单位选择
+    getTreeData(n) {
+      let obj = {};
+      let name = "";
+      this.offenUse = false;
+      this.dialogTypeNow = n;
+      let that = this;
+      let clearName = "";
+      this.canTab = false;
+      this.singelCheckF = true;
+      this.treeData = [];
+      //手动清空时处理
+      switch (n) {
+        case "chen":
+          //this.bank_main
+          name = "承办部门";
+          obj = Object.assign(obj, this.deptIdData);
+          clearName = "deptId";
+          break;
+        case "shou":
+          obj = Object.assign(obj, this.receiveOrgIdData);
+          name = "收文单位";
+          clearName = "receiveOrgName";
+          break;
+        case "lai":
+          obj = Object.assign(obj, this.sendOrgIdData);
+          name = "来文单位";
+          clearName = "sendOrgName";
+          break;
+      }
+      this.clearCheckData(clearName);
+      this.dialogTit = name;
+      this.showCompDialog();
+      this.$post
+        .postData(
+          "statisticsSupervise",
+          JSON.stringify(obj),
+          this.$businessCode.swglgg
+        )
+        .then(res => {
+          that.treeData = (res && res.data) || [];
+          that.treeData[0].disabled=true;
+        });
+    },
+
+    //清空处理
+    clearCheckData(name) {
+      //手动清空时处理
+      if (!this.ruleForm[name]) {
+        this.checkIds = [];
+        this.checkData = [];
+        if (name === "undertakeOrganName") {
+          this.ruleForm.undertakeOrganId = "";
+          this.chenCheckData = [];
+        }
+        if (name === "sendOrgName") {
+          this.ruleForm.sendOrgId = "";
+          this.shouCheckData = [];
+        }
+        if (name === "receiveOrgName") {
+          this.ruleForm.receiveOrgId = "";
+          this.laiCheckData = [];
+        }
+      }
+    },
+    //完成并发送弹窗
+    showCompDialog(data, status, type, params, dtype) {
+      let that = this;
+      if (status) {
+        //确定保存时
+        let names = [];
+        let ids = [];
+        that.checkIds = [];
+        if (data.length) {
+          this.checkData = [].concat(data);
+          data.map(item => {
+            names.push(item.name || item.text);
+            ids.push(item.id);
+            that.checkIds.push(item.id);
+          });
+        }
+
+        switch (dtype) {
+          case "chen":
+            this.ruleForm.deptName = names.join("");
+            this.ruleForm.deptId = ids.join("");
+            this.chenCheckData = this.checkData;
+            break;
+          case "shou":
+            this.ruleForm.receiveOrgName = names.join("");
+            this.ruleForm.receiveOrgId = ids.join("");
+            this.laiCheckData = this.checkData;
+            break;
+          case "lai":
+            this.ruleForm.sendOrgName = names.join("");
+            this.ruleForm.sendOrgId = ids.join("");
+            this.shouCheckData = this.checkData;
+            break;
+        }
+      }
+
+      this.dialogState = !this.dialogState;
+      //关闭弹窗 并确认完成发送
+      if (this.dialogState) {
+        this.backDialogData(this.dialogTypeNow);
+      }
+    },
+
+    //弹窗回显数据
+    backDialogData(type) {
+      let newA = [];
+      switch (type) {
+        case "chen":
+          this.checkIds = this.ruleForm.undertakeOrganId;
+          break;
+        case "shou":
+          this.checkIds = this.ruleForm.receiveOrgId;
+          break;
+        case "lai":
+          this.checkIds = this.ruleForm.sendOrgId;
+          break;
+      }
+    },
+    initData() {
+      if (this.times) {
+        this.$post
+          .postData(
+            "statisticsQsSupervise ",
+            JSON.stringify(this.ruleForm),
+            this.$businessCode.swglgg
+          )
+          .then(res => {
+            this.tableData = res.data;
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      } else {
+        this.$message({
+          type: "error",
+          message: "请选择日期"
+        });
+      }
+    },
+    arrow() {
+      this.down = !this.down;
+    },
+    cellClick(row, column, cell, event) {
+      console.log(row.id);
+      this.$router.push({
+        path: "/countersignend",
+        query: {
+          id: row.id
+        }
+      });
+    },
+    resetForm(formName) {
+      //this.$refs[formName].resetFields();
+      this.ruleForm.deptId = "";
+      this.ruleForm.deptName= "";
+      this.ruleForm.startTime = "";
+      this.ruleForm.endTime = "";
+      this.times = "";
+    }
+  },
+  created() {
+    // this.initData();
+    this.treeTradeCode = this.$businessCode.swglgg; //人员树交
+  }
+};
+</script>
+
+<style lang="less" scoped>
+.btn-writeEnDspc {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #dcdfe6;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  margin-right: 10px;
+  transition: 0.1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+.btn-writeEnDspc:hover {
+  background: #66b1ff;
+  border-color: #66b1ff;
+}
+.mt20 {
+  padding: 20px 0 0 0;
+  position: relative;
+  border: 1px solid #f0f0f0;
+}
+.mtdown {
+  padding: 20px 0 80px 0;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+.down {
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+  text-align: center;
+}
+.mt20end {
+  margin-top: 20px;
+}
+
+.arrowup {
+  text-align: center;
+}
+.table-first {
+  border-bottom: 2px solid #f0f0f0;
+}
+.stcs_table tr {
+  height: 35px;
+  line-height: 35px;
+}
+</style>

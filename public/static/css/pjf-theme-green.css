@@ -1,0 +1,772 @@
+
+
+
+.pjf_linkBtn_left {
+	background-image: url(images-green/pjf_linkButton_left-green.png);}
+.linkbtn_icon_add{
+		background:url('icons-green/add-green.png') no-repeat;
+		background:url('icons-green/add-green.png') no-repeat;}
+.icon-back{
+	background:url('icons-green/back-green.png') no-repeat;}
+.tree-loading{
+	background:url('images-green/tree_loading-green.gif') no-repeat;}
+.tree-checkbox2{
+	background:url('images-green/tree_checkbox_2-green.gif') no-repeat;}
+.tree-checkbox1{
+	background:url('images-green/tree_checkbox_1-green.gif') no-repeat;}
+.tree-checkbox0{
+	background:url('images-green/tree_checkbox_0-green.gif') no-repeat;}
+.tabs-scroller-right{
+	background:#E0ECFF url('images-green/tabs_rightarrow-green.png') no-repeat center center;}
+.icon-save{
+	background:url('icons-green/filesave-green.png') no-repeat;}
+.icon-help{
+	background:url('icons-green/help-green.png') no-repeat;}
+.tabs-scroller-left{
+	background:#E0ECFF url('images-green/tabs_leftarrow-green.png') no-repeat center center;}
+.tabs li a.tabs-close{
+	background:url('images-green/tabs_close-green.png') no-repeat 2px 2px;}
+.tabs{
+	*background:url(images-green/tabs_bottom_boder-green.png) repeat-x;}
+.tabs li.tabs-selected a.tabs-inner{
+	background:url('images-green/tabs_active-green.png') no-repeat center bottom;}
+.tabs li a.tabs-inner:hover{
+	background:url('images-green/tabs_active-green.png') no-repeat center bottom;}
+.pagination-icon-pager-hover{
+    background:url('images-green/submit_btn-green.png') no-repeat top right;}
+
+.pagination-icon-pager-left-hover{
+	background:url('images-green/submit_btn-green.png') no-repeat top left;}
+a.l-btn:hover span.icon-pager-left{
+    background:url('images-green/submit_btn-green.png') no-repeat top left;}
+
+
+a.l-btn:hover span span.icon-pager{
+    background:url('images-green/submit_btn-green.png') no-repeat top right;}
+.icon-pager-left:hover{
+    background:url('images-green/submit_btn-green.png') no-repeat top left;}
+.icon-pager:hover{
+    background:url('images-green/submit_btn-green.png') no-repeat top right;}
+.spinner-arrow-up,.spinner-arrow-down{
+	background:#E0ECF9 url('images-green/spinner_arrow_up-green.gif') no-repeat 5px 2px;}
+.spinner-arrow-down{
+	background:#E0ECF9 url('images-green/spinner_arrow_down-green.gif') no-repeat 5px 3px;}
+
+.linkbtn_icon_ivr{
+	background:url('icons-green/linkbtn-ivr-green.png') no-repeat center;}
+.panel-tool-restore{
+	background:url('images-green/panel_tools-green.gif') no-repeat -16px -16px;}
+.panel-tool-max{
+	background:url('images-green/panel_tools-green.gif') no-repeat 0px -16px;}
+.panel-tool-min{
+	background:url('images-green/panel_tools-green.gif') no-repeat 0px 0px;}
+.icon-pager{
+    background:url('icons-green/pager_bg_page-green.png') no-repeat top right;}
+.icon-pager-left{
+    background:url('icons-green/pager_bg_page-green.png') no-repeat top left;}
+
+.panel-tool-close{
+	background:url('images-green/panel_tools-green.gif') no-repeat -16px 0px;}
+.window {
+	background:transparent url('images-green/panel_title-green.png');}
+.panel-header{
+    background:url('images-green/panel_title-green.png');}
+.panel-loading{
+	background:url('images-green/panel_loading-green.gif') no-repeat 10px 10px;}
+.pagination-prev{
+	background:url('images-green/pagination_prev-green.gif') no-repeat;}
+.pagination-next{
+	background:url('images-green/pagination_next-green.gif') no-repeat;}
+.pagination-loading{
+	background:url('images-green/pagination_loading-green.gif') no-repeat;}
+.datagrid-mask-msg{
+	background:#fff url('images-green/pagination_loading-green.gif') no-repeat scroll 5px 10px;}
+.pagination-last{
+	background:url('images-green/pagination_last-green.gif') no-repeat;}
+.pagination-first{
+	background:url('images-green/pagination_first-green.gif') no-repeat;}
+
+.tree-collapsed{
+	background:url('images-green/nav_tree_open-green.png') no-repeat 0px -3px;}
+
+.tree-file{
+	background:url('images-green/nav_tree_last-green.png') no-repeat 0 -3px;}
+.tree-expanded{
+	background:url('images-green/nav_tree_closed-green.png') no-repeat 0 -3px;}
+.messager-info{
+	background:url('images-green/messager_info-green.png') no-repeat ;}
+.layout-button-right{
+	background:url('images-green/layout_arrows-green.png') no-repeat 0 -16px;}
+.layout-button-left{
+	background:url('images-green/layout_arrows-green.png') no-repeat 0 0;}
+.layout-button-down{
+	background:url('images-green/layout_arrows-green.png') no-repeat -16px 0;}
+.layout-button-up{
+	background:url('images-green/layout_arrows-green.png') no-repeat -16px -16px;}
+.accordion-collapse{
+	background:url('images-green/accordion_collapse-green.png') no-repeat;}
+.accordion-expand{
+	background:url('images-green/accordion_expand-green.png') no-repeat;}
+.calendar-nextmonth{
+	background:url('images-green/calendar_nextmonth-green.png') no-repeat;}
+.helpbox_ipt_helpbox{
+	background:url(images-green/helpbox_ipt_helpboxborder-green.png) no-repeat #E0EAF3 ;}
+.calendar-nextyear{
+	background:url('images-green/calendar_nextyear-green.png') no-repeat;}	
+.calendar-menu-next{
+	background:url('images-green/calendar_nextyear-green.png') no-repeat 5px 6px;}
+.calendar-prevmonth{
+	background:url('images-green/calendar_prevmonth-green.png') no-repeat;}
+.helpbox_ipt_bottombox{
+	background:url(images-green/helpbox_ipt_bottombox-green.png) no-repeat center bottom #E0EAF3;}
+.calendar-prevyear{
+	background:url('images-green/calendar_prevyear-green.png') no-repeat;}
+.calendar-menu-prev{
+	background:url('images-green/calendar_prevyear-green.png') no-repeat 5px 6px;}
+.calendar-title{
+	background:url('images-green/calendar_title_background-green.png') no-repeat;}
+.point_box{
+	background:url(images-green/help-green.png);}
+.panel-body{
+	background-image:url('images-green/ccb_pjfPanel_bg-green.png');}
+.window .window-body{
+	background-image:url(images-green/ccb_pjfPanel_bg-green.png);}
+.datebox .combo-arrow{
+	background:url('images-green/datebox_arrow-green.png') no-repeat center center;}
+.datagrid-sort-desc .datagrid-sort-icon{
+	background:url('images-green/datagrid_sort_desc-green.gif') no-repeat center center;}
+.datagrid-sort-asc .datagrid-sort-icon{
+	background:url('images-green/datagrid_sort_asc-green.gif') no-repeat center center;}
+
+
+.pjf_linkBtn_queue {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -216px;}
+.pjf_zxlc span.pjf_liuc_finish_branch{
+	background:url(images-green/zxlc_success_two-green.png) repeat right top;}
+.pjf_zxlc li.pjf_liuc_suc span{
+	background:url(images-green/zxlc_success_two-green.png) no-repeat right top;}
+.cal-hd{
+    background: url('images-green/calendar_title_background-green.png') no-repeat;}
+.pjf_zxlc span.pjf_liuc_finish_branch a{
+	background:url(images-green/zxlc_success_one-green.png) no-repeat;}
+.cal-pre{
+    background: url('images-green/calendar_prevmonth-green.png') no-repeat;}
+.cal-next{
+    background: url('images-green/calendar_nextmonth-green.png') no-repeat;}
+.pjf_zxlc li.pjf_liuc_suc a{
+	background:url(images-green/zxlc_success_one-green.png) no-repeat;}
+.pjf_zxlc span.pjf_liuc_now_branch{
+	background:url(images-green/zxlc_now_two-green.png) no-repeat right top;}
+.pjf_zxlc li.pjf_liuc_now span{
+	background:url(images-green/zxlc_now_two-green.png) no-repeat right top;}
+
+
+
+.pjf_zxlc span.pjf_liuc_now_branch a{
+	background:url(images-green/zxlc_now_one-green.png) no-repeat;}
+.pjf_zxlc li.pjf_liuc_now a{
+	background:url(images-green/zxlc_now_one-green.png) no-repeat;}
+.pjf_zxlc_li_img_three{
+	background-image: URL(images-green/zxlc_liuc_ico3-green.png);}
+.linkbtn_icon_verify{
+	background:url('icons-green/verify-green.png') no-repeat;}
+.linkbtn_icon_validate{
+	background:url('icons-green/validate-green.png') no-repeat;}
+.pjf_zxlc_li_img_two{
+	background-image: URL(images-green/zxlc_liuc_ico2-green.png);}
+.pif_lm_searchButton{
+	background:url(images-green/left_meunButton-green.png);}
+#process_h li a{
+	background:url(images-green/liucheng-green.png) no-repeat center left;}
+#process_h b{
+	background: url(images-green/liucheng-green.png) no-repeat center right;}
+#process_h .process_h_current a{
+	background:url(images-green/liucheng-green.png) no-repeat bottom left;}
+#process_h .process_h_current b{
+	background: url(images-green/liucheng-green.png) no-repeat bottom right;}
+#process_h .process_h_finish a{
+	background: url(images-green/liucheng-green.png) no-repeat top left;}
+#process_h .process_h_finish b{
+	background: url(images-green/liucheng-green.png) no-repeat top right;}
+.pjf_zxlc_li_img_one{
+	background-image: URL(images-green/zxlc_liuc_ico-green.png);}
+
+.pointerImg{
+	background: url(images-green/nav_07-green.png) no-repeat top left;}
+
+.astyle1{
+	background:url(images-green/nav_11-green.png) no-repeat center left;}
+.doingImg1{
+	background: url(images-green/nav_11-green.png) no-repeat top left;}
+.doingImg{
+	background: url(images-green/nav_11-green.png) no-repeat top left;}
+.astyle3{
+	background:url(images-green/nav_13-green.png) no-repeat center left;}
+.undoImg1{
+	background: url(images-green/nav_13-green.png) no-repeat top left;}
+.undoImg{
+	background: url(images-green/nav_13-green.png) no-repeat top left;}
+.astyle6{
+	background:url(images-green/nav_16-green.png) no-repeat center left;}
+.doneImg1{
+	background: url(images-green/nav_16-green.png) no-repeat top left;}
+.doneImg{
+	background: url(images-green/nav_16-green.png) no-repeat top left;}
+.bstyle2{
+	background: url(images-green/nav_childBar2-green.png) no-repeat center right;}
+
+.lineImgDo{
+	background: url(images-green/nav_childBar2-green.png) no-repeat top left;}
+.pjf_zxlc li span{
+	background:url(images-green/zxlc_default_two-green.png) no-repeat right top;}
+.pjf_zxlc li a{
+	background:url(images-green/zxlc_default_one-green.png) no-repeat;}
+
+.icon-confirm{
+background:url('icons-green/confirm-green.png') no-repeat;}
+.linkbtn_icon_success{
+	background:url('icons-green/success-green.png') no-repeat;}
+.customizehome_nav li a{ background:url(images-green/nav_tree_open-green.png) no-repeat left center;}
+.custom_menu_l ul li a.menu_jia{background: url("images-green/nav_tree_open-green.png") no-repeat scroll left center transparent;}
+.linkbtn_icon_del{
+	background:url('icons-green/del-green.png') no-repeat;}
+.linkbtn_icon_editable{
+	background:url('icons-green/editable-green.png') no-repeat;}
+
+.icon-err{
+background:url('icons-green/err-green.png') no-repeat;}
+.linkbtn_icon_export{
+	background:url('icons-green/export-green.png') no-repeat;}
+.linkbtn_icon_import{
+	background:url('icons-green/import-green.png') no-repeat;}
+.linkbtn_icon_jump{
+	background:url('icons-green/jump-green.png') no-repeat;}
+
+
+.linkbtn_icon_back{
+	background:url('icons-green/linkbtn_back-green.png') no-repeat;}
+.pjf_selectionBox_standardModule .pjf_selectionBox_standardModule_tit{
+	background: url(images-green/table_tit_bg-green.png) repeat-x #86bdec;}
+.standardTab_menu{
+	background:url(images-green/table_tit_bg-green.png) repeat-x;}
+.linkbtn_icon_saveAs{
+	background:url('icons-green/saveAs-green.png') no-repeat;}
+.linkbtn_icon_save{
+	background:url('icons-green/save-green.png') no-repeat;}
+.standardModule .standardModule_tit{
+	background: url(images-green/table_tit_bg-green.png) repeat-x #86bdec;}
+
+.submit_btnex {
+	background: url(images-green/submit_btnex-green.png);}
+.icon-return{
+background:url('icons-green/return-green.png') no-repeat;}
+.linkbtn_icon_restart{
+	background:url('icons-green/restart-green.png') no-repeat;}
+.linkbtn_icon_reset{
+	background:url('icons-green/reset-green.png') no-repeat;}
+.linkbtn_icon_refresh{
+	background:url('icons-green/refresh-green.png') no-repeat;}
+.linkbtn_icon_quit{
+	background:url('icons-green/quit-green.png') no-repeat;} 
+.linkbtn_icon_prev{
+	background:url('icons-green/prev-green.png') no-repeat;}
+.linkbtn_icon_pause{
+	background:url('icons-green/pause-green.png') no-repeat;}
+.linkbtn_icon_next{
+	background:url('icons-green/next-green.png') no-repeat;}
+.linkbtn_icon_modify{
+	background:url('icons-green/modify-green.png') no-repeat;} 
+
+.icon-mini-add{
+	background:url('icons-green/mini_add-green.png') no-repeat 2px 2px;}
+.pjf_selectionBox_submit_btn input {
+    background: url("images-green/submit_btn-green.png") no-repeat scroll right top transparent;}
+.pjf_selectionBox_submit_btn {
+    background: url("images-green/submit_btn-green.png") no-repeat scroll left top transparent;}
+
+.submit_btn input {
+	background: url(images-green/submit_btn-green.png) no-repeat top right;}
+
+.submit_btn_left {
+	background: url(images-green/submit_btn-green.png) no-repeat top left;}
+
+.submit_btn {
+	background: url(images-green/submit_btn-green.png) no-repeat top right;}
+.linkbtn_icon_canel{
+	background:url('icons-green/linkbtn_cancel-green.png') no-repeat;}
+.linkbtn_icon_confirm{
+	background:url('icons-green/linkbtn_confirm-green.png') no-repeat;}
+.linkbtn_icon_error{
+	background:url('icons-green/linkbtn_error-green.png') no-repeat;}
+.linkbtn_icon_help{
+	background:url('icons-green/linkbtn_help-green.png') no-repeat;}
+.linkbtn_icon_print{
+	background:url('icons-green/linkbtn_print-green.png') no-repeat;}
+.linkbtn_icon_redo{
+	background:url('icons-green/linkbtn_redo-green.png') no-repeat;}
+.pjf_selectionBox_submit_btn:hover input {
+    background: url("images-green/submit_btn_hover-green.png") no-repeat scroll right top transparent;}
+.pjf_selectionBox_submit_btn:hover {
+    background: url("images-green/submit_btn_hover-green.png") no-repeat scroll left top transparent;}
+
+.submit_btn:hover input {
+	background: url(images-green/submit_btn_hover-green.png) no-repeat top right;}
+
+.submit_btn_left:hover {
+	background: url(images-green/submit_btn_hover-green.png) no-repeat top left;}
+
+.submit_btn:hover {
+	background: url(images-green/submit_btn_hover-green.png) no-repeat top right;}
+.linkbtn_icon_search{
+	background:url('icons-green/linkbtn_search-green.png') no-repeat;}
+
+.linkbtn_icon_apply{
+	background:url('icons-green/apply-green.png') no-repeat;}
+
+
+.pjf_linkBtn_left_over {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -28px;}
+
+
+.pjf_linkBtn_left:hover {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -28px;}
+
+
+.pjf_linkBtn_left:active {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -28px;}
+
+.pjf_linkBtn_disable_left {
+	background-image: url(images-green/pjf_linkButton_left-green.png);}
+
+
+.pjf_linkBtn_assistant_left {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -84px;}
+
+
+.pjf_linkBtn_assistant_left_over {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -108px;}
+
+
+.pjf_linkBtn_assistant_left:hover {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -108px;}
+
+
+.pjf_linkBtn_assistant_left:active {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -108px;}
+.pjf_linkBtn_assistant_disable_left {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -132px;}
+
+
+.pjf_linkBtn_loginBtn_left {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -156px;}
+
+
+.pjf_linkBtn_loginBtn_left_over {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -186px;}
+
+
+.pjf_linkBtn_loginBtn_left:hover {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -186px;}
+
+
+.pjf_linkBtn_loginBtn_left:active {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -186px;}
+
+
+.pjf_linkBtn_queue_left {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -216px;}
+
+
+.pjf_linkBtn_queue_left_over {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -240px;}
+
+
+.pjf_linkBtn_queue_left:hover {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -240px;}
+
+
+.pjf_linkBtn_queue_left:active {
+	background: url(images-green/pjf_linkButton_left-green.png) no-repeat left -240px;}
+
+
+.pjf_linkBtn {
+	background-image: url(images-green/pjf_linkButton_middle-green.png);}
+
+
+.pjf_linkBtn_over {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -28px;}
+
+
+a:hover .pjf_linkBtn {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -28px;}
+
+
+.pjf_linkBtn:active {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -28px;}
+
+.pjf_linkBtn_disable {
+	background-image: url(images-green/pjf_linkButton_middle-green.png);}
+
+
+.pjf_linkBtn_assistant {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -84px;}
+
+.pjf_linkBtn_assistant_over {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x  left -108px;}
+
+
+a:hover .pjf_linkBtn_assistant {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -108px;}
+
+
+.pjf_linkBtn_assistant:active {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -108px;}
+
+.pjf_linkBtn_assistant_disable {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -132px;}
+
+
+.pjf_linkBtn_loginBtn {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -156px;}
+
+.pjf_linkBtn_loginBtn_over {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x  left -186px;}
+
+
+a:hover .pjf_linkBtn_loginBtn {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -186px;}
+
+
+.pjf_linkBtn_loginBtn:active {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -186px;}
+.linkbtn_icon_undo{
+	background:url('icons-green/linkbtn_undo-green.png') no-repeat;}
+
+.pjf_linkBtn_queue_over {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x  left -240px;}
+
+
+a:hover .pjf_linkBtn_queue {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -240px;}
+
+
+.pjf_linkBtn_queue:active {
+	background: url(images-green/pjf_linkButton_middle-green.png) repeat-x left -240px;}
+
+
+.pjf_linkBtn .pjf_linkBtn_right  {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right 0px;}
+
+
+.pjf_linkBtn  .pjf_linkBtn_right_over {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -28px
+		;}
+
+
+a:hover .pjf_linkBtn .pjf_linkBtn_right {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -28px
+		;}
+
+
+.pjf_linkBtn .pjf_linkBtn_right:active {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -28px
+		;}
+
+
+.pjf_linkBtn_disable .pjf_linkBtn_disable_right {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -56px;}
+
+
+.pjf_linkBtn_assistant .pjf_linkBtn_assistant_right  {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat  right -84px;}
+
+
+.pjf_linkBtn_assistant  .pjf_linkBtn_assistant_right_over {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -108px
+		;}
+
+
+a:hover .pjf_linkBtn_assistant .pjf_linkBtn_assistant_right {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -108px
+		;}
+
+
+.pjf_linkBtn_assistant .pjf_linkBtn_assistant_right:active {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -108px
+		;}
+
+
+.pjf_linkBtn_assistant_disable .pjf_linkBtn_assistant_disable_right {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -132px;}
+
+
+.pjf_linkBtn_loginBtn .pjf_linkBtn_loginBtn_right  {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat  right -156px;}
+
+
+.pjf_linkBtn_loginBtn  .pjf_linkBtn_loginBtn_right_over {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -186px
+		;}
+
+
+a:hover .pjf_linkBtn_loginBtn .pjf_linkBtn_loginBtn_right {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -186px
+		;}
+
+
+.pjf_linkBtn_loginBtn .pjf_linkBtn_loginBtn_right:active {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -186px
+		;}
+
+
+.pjf_linkBtn_queue .pjf_linkBtn_queue_right  {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat  right -216px;}
+
+
+.pjf_linkBtn_queue  .pjf_linkBtn_queue_right_over {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -240px;}
+
+
+a:hover .pjf_linkBtn_queue .pjf_linkBtn_queue_right {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -240px;}
+
+
+.pjf_linkBtn_queue .pjf_linkBtn_queue_right:active {
+	background: url(images-green/pjf_linkButton_right-green.png) no-repeat right -240px;}
+.pjf_single_span{
+	background: url("images-green/select-green.png") no-repeat scroll 0px 0px #E0ECF9;}
+.pjf_span{
+	background: url("images-green/select-green.png") no-repeat scroll 0px 0px #E0ECF9;}
+.pjf_hxlc_h .pjf_hxlc_h_finish b{
+	background: url(images-green/process_h-green.png) no-repeat top right;}
+.pjf_hxlc_h .pjf_hxlc_h_finish a{
+	background: url(images-green/process_h-green.png) no-repeat top left;}
+.pjf_hxlc_h .pjf_hxlc_h_current b{
+	background: url(images-green/process_h-green.png) no-repeat bottom right;}
+.pjf_hxlc_h .pjf_hxlc_h_current a{
+	background:url(images-green/process_h-green.png) no-repeat bottom left;}
+
+.pjf_hxlc_h b{
+	background: url(images-green/process_h-green.png) no-repeat center right;}
+.pjf_hxlc_h li a{
+	background:url(images-green/process_h-green.png) no-repeat center left;}
+
+
+
+.pjf_table_moreDataContent_collapse
+{
+	background:url('images-green/table_collapse-green.png') no-repeat;}
+.pjf_zxlc_li_branch_tip_line{
+	background: url(images-green/pjf_zxlc_li_branch_tip_line-green.png) no-repeat center bottom;}
+.pjf_zxlc_li_branch_up{
+	background: url(images-green/pjf_zxlc_li_branch_up-green.png) no-repeat center;}
+.pjf_zxlc_li_branch_one{
+	background-image: URL(images-green/zxlc_liuc_ico-green.png);}
+
+.pjf_zxlc_li_branch_tip_tip{
+	background: url(images-green/pjf_zxlc_li_branch_tip_tip-green.png) no-repeat center;}
+.pagination-load-grid{
+	background:url('images-green/pagination_load_grid-green.png') no-repeat;}
+.pjfPanel-tool-min{
+	background:url('images-green/pjfPanel_tools-green.gif') no-repeat 0px 0px;}
+
+
+.pjf_zxlc_li_branch_no_button_in_line_left{
+	background:URL(images-green/zxlc_li_branch_two_line-green.png);}
+
+.pjf_zxlc_li_branch_right_tip{
+	background: url(images-green/pjf_zxlc_li_branch_right_tip-green.png) no-repeat center;}
+.pjf_zxlc_li_branch_line_tip{
+	background: url(images-green/pjf_zxlc_li_branch_line_tip-green.png) no-repeat center;}
+
+
+.pjf_zxlc_li_branch_left_tip{
+	background: url(images-green/pjf_zxlc_li_branch_left_tip-green.png) no-repeat center;}
+.pjf_zxlc_li_branch_down{
+	background: url(images-green/pjf_zxlc_li_branch_down-green.png) no-repeat center;}
+
+.pjf_zxlc_li_branch_no_button_in_line_right{
+	background-image: URL(images-green/zxlc_li_branch_two_line-green.png);}
+.gt_pageselector dl dd{
+	background:url("images-green/pageSelector_bg-green.png") right top no-repeat;}
+.pjf_fileupload_progressbar_value{
+	background:url(images-green/progressbar_value_bj-green.png) repeat-x;}
+.gt_pageselector dl dd a{
+	background:url("images-green/pageSelector_bg-green.png") left top no-repeat;}
+.gt_pageselector dl dd:hover{background:url("images-green/pageSelector_bg-green.png") right center no-repeat;}
+.gt_pageselector dl dd a:hover{
+	background:url("images-green/pageSelector_bg-green.png") left center no-repeat;}
+.pjfPanel-tool-close{
+	background:url('images-green/pjfPanel_tools-green.gif') no-repeat -16px 0px;}
+.pjf_fileupload_span_button{
+	background:url(images-green/submit_btn-green.png) no-repeat top right;}
+.pjfPanel-body{
+	background-image:url('images-green/ccb_pjfPanel_bg-green.png');}
+
+
+
+
+
+.ztree li span.button.orgTree_user_ico_close, 
+.ztree li span.button.orgTree_user_ico_open{
+	background-image:url(images-green/orgTree_user-green.png);}
+.pjf_imgCropper_footerRightBtn:hover{background:url(images-green/pjf_imgBrowser-green.png) -115px -19px no-repeat;}
+.pjf_imgCropper_footerRightBtn{background:url(images-green/pjf_imgBrowser-green.png) -115px 0 no-repeat;}
+.pjf_imgCropper_footerLeftBtn{background:url(images-green/pjf_imgBrowser-green.png) -135px 0 no-repeat;}
+.pjf_imgPreviewer_footerbtn4:hover{
+	background:url(images-green/pjf_imgBrowser-green.png) -115px -19px no-repeat;}
+.pjf_imgPreviewer_footerbtn3:hover{
+	background:url(images-green/pjf_imgBrowser-green.png) -93px -19px no-repeat;}
+.pjf_imgPreviewer_footerbtn2:hover{
+	background:url(images-green/pjf_imgBrowser-green.png) -70px -19px no-repeat;}
+.pjf_imgPreviewer_footerbtn1:hover{
+	background:url(images-green/pjf_imgBrowser-green.png) -135px -19px no-repeat;}
+.pjf_imgPreviewer_footerbtn4{
+	background:url(images-green/pjf_imgBrowser-green.png) -115px 0px no-repeat;}
+.pjf_imgPreviewer_footerbtn3{
+	background:url(images-green/pjf_imgBrowser-green.png) -93px 0px no-repeat;}
+.pjf_imgPreviewer_footerbtn2{
+	background:url(images-green/pjf_imgBrowser-green.png) -70px 0px no-repeat;}
+.pjf_imgPreviewer_footerbtn1{
+	background:url(images-green/pjf_imgBrowser-green.png) -135px 0px no-repeat;}
+.pjf_imgPreviewer_glassbg{
+	background: url(images-green/pjf_imgBrowser-green.png) 0 -55px no-repeat;}
+.pjf_imgPreviewer_btnup,.pjf_imgPreviewer_btndown{
+	background-image: url(images-green/pjf_imgBrowser-green.png);}
+.pjf_imgPreviewer_modbtn{
+	background-image: url(images-green/pjf_imgBrowser-green.png);}
+.pjf_button_forward{
+	background: url(images-green/pjf_forward-green.png) no-repeat;}
+.pjf_button_back{
+	background: url(images-green/pjf_back-green.png) no-repeat;}
+
+.loading{background:url(../css/images-green/022-green.gif) no-repeat left top;}
+a.pagination_btn_hover span.icon-pager-left {
+    background: url("images-green/submit_btn-green.png") no-repeat scroll left top transparent;}
+a.pagination_btn_hover span span.icon-pager {
+    background: url("images-green/submit_btn-green.png") no-repeat scroll right top transparent;}
+.pjf_scrollButton .right{
+	background:url(icons-green/right-green.png) no-repeat;} 
+.toolbar-right-icon:hover{
+	background: url('icons-green/toolbar_left_right-green.png') left -78px;}
+
+.pjf_table_moreDataContent_expand
+{
+	background:url('images-green/table_expand-green.png') no-repeat;}
+.pjfPanel-tool-max{
+	background:url('images-green/pjfPanel_tools-green.gif') no-repeat 0px -16px;}
+.pjf_responseinfo_btns a {
+	background:url(../css/images-green/responseinfo_business-green.png);} 
+
+
+.pjf_responseinfo_btns a:hover { 
+	background:url(../css/images-green/responseinfo_business_hover-green.png);}
+.pjfPanel-loading{
+	background:url('images-green/pjfPanel_loading-green.gif') no-repeat 10px 10px;}
+.pjf_scrollButton .left{
+	background:url(icons-green/left-green.png);}
+.toolbar-right-icon{
+	background: url('icons-green/toolbar_left_right-green.png') left -26px;}
+
+.ztree li span.button.orgTree_user_ico_docu{
+	background-image:url(images-green/orgTree_user-green.png);}
+	
+.pjf_icon{
+	background:url(icons-green/imgViewer_icon-green.png) no-repeat;}
+.pjf_imgCropper_footerLeftBtn:hover{background:url(images-green/pjf_imgBrowser-green.png) -135px -19px no-repeat;}
+
+.ztree li span.button.orgTree_org_ico_docu{
+	background-image:url(images-green/orgTree_org-green.png);}
+
+.ztree li span.button.orgTree_org_ico_close, 
+.ztree li span.button.orgTree_org_ico_open{
+	background-image:url(images-green/orgTree_org-green.png);}
+.pjfPanel-tool-restore{
+	background:url('images-green/pjfPanel_tools-green.gif') no-repeat -16px -16px;}
+.toolbar-left-icon:hover{
+	background: url('icons-green/toolbar_left_right-green.png') left -52px;}
+.pjf_win_panel-tool-restore{
+	background:url('images-green/win-panel-tool-restore-green.png') no-repeat ;}
+.pjf_win_panel-tool-collapse{
+	background:url('images-green/win-panel-tool-min-green.png') no-repeat;}
+
+
+
+.toolbar-left-icon{
+	
+	background: url('icons-green/toolbar_left_right-green.png') left 0px;}
+
+
+
+.pjf_win_panel-tool-close{
+	background:url('images-green/win-panel-tool-close-green.png') no-repeat ;}
+
+.pjf_win_panel-tool-expand{
+	background:url('images-green/win-panel-tool-expand-green.png') no-repeat;}
+.pjf_win_panel-tool-max{
+	background:url('images-green/win-panel-tool-max-green.png') no-repeat ;}
+.pjf-rareWord-icon{
+    background-image: url("images-green/rareWord-green.png");}
+.pjf-proList-checked{
+    background: url('images-green/checked-green.png') no-repeat;}
+
+.dateselect .container .dateselect-combo-icon{
+    background: url('images-green/datebox_arrow-green.png')  no-repeat center center;}
+
+
+
+
+
+
+.pfj_helpTip{
+	background: url("images-green/help2-green.png") no-repeat scroll center center rgba(0, 0, 0, 0);}
+
+.pjf_scrollBottomBar .mainImg{
+	background:url(images-green/pjf_scrollBottomBar_icon-green.png);}
+
+.pjf_scrollBottomBar .left_arrow{
+	background:url(images-green/pjf_scrollBottomBar_leftarrow-green.png);}
+
+.pjf_scrollBottomBar .right_arrow{
+	background:url(images-green/pjf_scrollBottomBar_rightarrow-green.png) repeat-y;}
+
+.pjf_scrollBottomBar .separator{
+	background:url(images-green/pjf_scrollBottomBar_sep-green.png) repeat-y;}
+.horizontal_dargTree li a.curSelectedNode,
+.horizontal_dargTree li a:hover{
+	background:url(images-green/horizontal_tree_hover_bg1-green.png) no-repeat center;}
+
+.set-icon-show{
+	background: url("images-green/nav_tree_open-green.png") no-repeat center;}
+
+
+.set-icon-hide{
+	background: url("images-green/nav_tree_closed-green.png") no-repeat center;}
+
+.pjf_jiaoyiche_img{
+	background: url(images-green/jiaoyiche-green.png);}
+.ztree li span.button {
+	background-image:url("images-green/zTreeStandard-green.png");}
+
+.ztree li span.button.ico_loading{ background:url(./images-green/ztree_loading-green.gif) no-repeat scroll 0 0 transparent;}
+
+span.tmpzTreeMove_arrow { background-image:url("./images-green/zTreeStandard-green.png");}
+.darg_ztree li a{
+	
+	background:url(images-green/tree_default_bg1-green.png) no-repeat center;}
+.darg_ztree li a.curSelectedNode,
+.darg_ztree li a:hover{
+	background:url(images-green/tree_hover_bg1-green.png) no-repeat center;}
+.darg_ztree li a.tmpTargetNode_inner{
+	background:url(images-green/tree_hover_bg-green.png) no-repeat center;}
+.horizontal_dargTree li a{
+	background:url(images-green/horizontal_tree_default_bg1-green.png) no-repeat center;}
+.horizontal_dargTree li span.button.root_open,
+.horizontal_dargTree li span.button.center_open,
+.horizontal_dargTree li span.button.bottom_open{
+	background:url(images-green/Horizontal_tree_bnt_open-green.png) no-repeat center;}
+.horizontal_dargTree li span.button.root_close,
+.horizontal_dargTree li span.button.center_close,
+.horizontal_dargTree li span.button.bottom_close{
+	
+	background:url(images-green/Horizontal_tree_bnt_close-green.png) no-repeat center;}

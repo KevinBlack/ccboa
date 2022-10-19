@@ -1,0 +1,109 @@
+<!--
+ * @Author: wy
+ * @Date: 2020-07-07 15:15:19
+ * @LastEditTime: 2020-08-14 14:21:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ccboa\src\views\setting\themeLexicon\classifier\index.vue
+-->
+<template>
+  <div class="classifier">
+    <div class="handleButton">
+      <el-button type="primary" @click="edit()">{{buttonText}}</el-button>
+    </div>
+    <div class="orgInfoTable">
+      <div class="orgInfoTitle">类别词配置</div>
+      <el-input
+        type="textarea"
+        :rows="5"
+        v-model="form.mtTmpOne"
+        resize="none"
+        :disabled="form.isDisabled"
+        :style="{fontSize:'18px'}"
+      ></el-input>
+      <span class="message">*注意：多个主题词用英文模式下的“,”号隔开</span>
+    </div>
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+
+export default {
+  name: 'classifier',
+  components: {
+  },
+  props: {},
+  data () {
+    return {
+      buttonText: '编辑',
+      form: {
+        detailData: [],
+        mtTmpOne: '',
+        isDisabled: true
+      }
+    }
+  },
+  computed: {},
+  methods: {
+    //初始化数据
+    classifierDetail () {
+      this.$api.themeLexicon.classifierDetail({}).then(res => {
+        this.form.detailData = JSON.parse(JSON.stringify(res.data))
+        let mtTmpOneArr = res.data && res.data.map(item => {
+          return item.mtTmpOne
+        })
+        this.form.mtTmpOne = mtTmpOneArr.join(',')
+      })
+    },
+    //编辑、保存
+    edit () {
+      if (this.buttonText === '保存') {
+        let mtTmpOne = this.form.mtTmpOne
+        this.$api.themeLexicon.classifierUpdate({ mtTmpOne }).then(res => {
+          this.classifierDetail()
+          this.buttonText = '编辑'
+          this.form.isDisabled = !this.form.isDisabled
+        })
+      } else {
+        this.buttonText = '保存'
+        this.form.isDisabled = !this.form.isDisabled
+      }
+    }
+  },
+  activated () {
+  },
+  mounted () {
+    this.classifierDetail()
+  },
+  created () {
+  }
+}
+</script>
+
+<style scoped lang="less" rel="stylesheet/less">
+.classifier {
+  height: 100vh;
+  .orgInfoTable {
+    padding: 0px 70px;
+    .orgInfoTitle {
+      margin-bottom: 40px;
+      font-size: 30px;
+      line-height: 75px;
+      color: #ff0502;
+      font-weight: 600;
+      text-align: center;
+    }
+    .el-textarea {
+      .el-textarea__inner {
+        font-weight: 600;
+      }
+    }
+    .message {
+      padding-left: 20px;
+      color: #ff0502;
+      font-size: 12px;
+      line-height: 50px;
+    }
+  }
+}
+</style>

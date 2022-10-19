@@ -1,0 +1,382 @@
+/*-------------------------------------
+zTree Style
+
+version:	3.4
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+
+-------------------------------------*/
+
+.ztree * {padding:0; margin:0; font-size:12px; /*font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif*/}
+.ztree {margin:0; padding:5px; color:#333}
+.ztree li{padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0}
+.ztree li ul{ margin:0; padding:0 0 0 18px}
+.ztree li ul.line{ background:url(images/line_conn.gif) 0 0 repeat-y;}
+
+.ztree li a {padding:1px 3px 0 0; margin:0; cursor:pointer; height:20px; color:#333; background-color: transparent;
+	text-decoration:none; vertical-align:top; display: inline-block;}
+.ztree li a:hover {text-decoration:underline}
+.ztree li a.curSelectedNode {padding-top:0px; background-color:#D5D5D5; color:black; height:16px; border:0px #FFB951 solid; opacity:0.8;}
+.ztree li a.curCheckedNode {padding-top:0px; background-color:#D5D5D5; color:black; height:16px; border:0px #FFB951 solid; opacity:0.8;}
+.ztree li a.curSelectedNode_Edit {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.tmpTargetNode_inner {padding-top:0px; background-color:#316AC5; color:white; height:16px; border:1px #316AC5 solid;
+	opacity:0.8; filter:alpha(opacity=80)}
+.ztree li a.tmpTargetNode_prev {}
+.ztree li a.tmpTargetNode_next {}
+.ztree li a input.rename {height:14px; width:80px; padding:0; margin:0;
+	font-size:12px; border:1px #7EC4CC solid; *border:0px}
+.ztree li span {line-height:16px; margin-right:2px;white-space:nowrap;}
+.ztree li span.button {line-height:0; margin:0; width:16px; height:16px; display: inline-block; vertical-align:middle;
+	border:0 none; cursor: pointer;outline:none;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-image:url("images/zTreeStandard.png");}/*zhangxr 2013/2/28*/
+
+.ztree li span.button.chk {width:13px; height:13px;overflow:hidden; margin:0 3px 0 0; cursor: auto;}/*¼æÈÝie6 zhangxr 2013/3/5 */
+.ztree li span.button.chk.checkbox_false_full {background-position:0 0}
+.ztree li span.button.chk.checkbox_false_full_focus {background-position:0 -14px}
+.ztree li span.button.chk.checkbox_false_part {background-position:0 -28px}
+.ztree li span.button.chk.checkbox_false_part_focus {background-position:0 -42px}
+.ztree li span.button.chk.checkbox_false_disable {background-position:0 -56px}
+.ztree li span.button.chk.checkbox_true_full {background-position:-14px 0}
+.ztree li span.button.chk.checkbox_true_full_focus {background-position:-14px -14px}
+.ztree li span.button.chk.checkbox_true_part {background-position:-14px -28px}
+.ztree li span.button.chk.checkbox_true_part_focus {background-position:-14px -42px}
+.ztree li span.button.chk.checkbox_true_disable {background-position:-14px -56px}
+.ztree li span.button.chk.radio_false_full {background-position:-28px 0}
+.ztree li span.button.chk.radio_false_full_focus {background-position:-28px -14px}
+.ztree li span.button.chk.radio_false_part {background-position:-28px -28px}
+.ztree li span.button.chk.radio_false_part_focus {background-position:-28px -42px}
+.ztree li span.button.chk.radio_false_disable {background-position:-28px -56px}
+.ztree li span.button.chk.radio_true_full {background-position:-42px 0}
+.ztree li span.button.chk.radio_true_full_focus {background-position:-42px -14px}
+.ztree li span.button.chk.radio_true_part {background-position:-42px -28px}
+.ztree li span.button.chk.radio_true_part_focus {background-position:-42px -42px}
+.ztree li span.button.chk.radio_true_disable {background-position:-42px -56px}
+
+.ztree li span.button.switch {width:18px; height:18px;margin:0 3px 0 0;}
+.ztree li span.button.root_open{background-position:-92px -54px}
+.ztree li span.button.root_close{background-position:-74px -54px}
+.ztree li span.button.roots_open{background-position:-92px 0}
+.ztree li span.button.roots_close{background-position:-74px 0}
+.ztree li span.button.center_open{background-position:-92px -72px}
+.ztree li span.button.center_close{background-position:-74px -18px}
+.ztree li span.button.bottom_open{background-position:-92px -72px}
+.ztree li span.button.bottom_close{background-position:-74px -72px}
+.ztree li span.button.noline_open{background-position:-92px -72px}
+.ztree li span.button.noline_close{background-position:-74px -72px}
+.ztree li span.button.root_docu{ background:none;}
+.ztree li span.button.roots_docu{background-position:-56px 0}
+.ztree li span.button.center_docu{background-position:-100px -100px}
+.ztree li span.button.bottom_docu{background:none;}
+.ztree li span.button.noline_docu{ background:none;}
+
+.ztree li span.button.ico_open{margin-right:2px; background-position:-110px -16px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_close{margin-right:2px; background-position:-110px 0; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_docu{margin-right:2px; background-position:-110px -32px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.edit {margin-right:2px; background-position:-110px -48px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.remove {margin-right:2px; background-position:-110px -64px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.add{margin-right:2px; background-position:-144px 0; vertical-align:top; *vertical-align:middle}
+
+.ztree li span.button.ico_loading{margin-right:2px; background:url(./images/ztree_loading.gif) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+
+ul.tmpTargetzTree {background-color:#FFE6B0; opacity:0.8; filter:alpha(opacity=80)}
+
+span.tmpzTreeMove_arrow {width:16px; height:16px; display: inline-block; padding:0; margin:2px 0 0 1px; border:0 none; position:absolute;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-position:-110px -80px; background-image:url("./images/zTreeStandard.png"); }
+
+ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height:auto;overflow:hidden; background-color:#cfcfcf; border:1px #00B83F dotted; opacity:0.8; filter:alpha(opacity=80)}
+.zTreeMask {z-index:10000; background-color:#cfcfcf; opacity:0.0; filter:alpha(opacity=0); position:absolute}
+
+/* level style*/
+/*.ztree li span.button.level0 {
+	display:none;
+}
+.ztree li ul.level0 {
+	padding:0;
+	background:none;
+}*/
+
+
+.move li ul.level0 {padding:0; background:none;}
+.move li ul.level0  span.centerNodeLine:fisrt{background:none;}
+.move li ul.level0  span.nodebottomLine:fisrt{background:none;}
+
+
+.darg_ztree{float:left;clear:left;*width:2500px;height:360px;display:table-cell;}
+.darg_ztree li ul{margin-top:-4px;*margin-top:0;}
+.darg_ztree li{
+	display:table-cell;
+	*float:left; 
+	text-align:center;
+	_display:inline;
+}
+.darg_ztree li ul{padding:0;}
+.darg_ztree li span{
+	margin:0;
+	line-height:0;
+	display: block;
+	line-height: 30px;
+	*line-height: 20px;
+	*display:inline; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.darg_ztree li a{
+	width:67px;
+	height:40px;
+	color:#333333;
+	/*border:1px solid #ccc;
+	border-radius:5px;*/
+	background:url(images/tree_default_bg1.png) no-repeat center;
+	*background-position:6px 0;
+	display:block;
+	line-height:0px;
+	text-align:center;
+	margin:0px auto;
+	*margin:0px;
+	padding:0 6px;
+	position:relative;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.darg_ztree li a.curSelectedNode,
+.darg_ztree li a:hover{
+	background:url(images/tree_hover_bg1.png) no-repeat center;
+	*background-position:6px 0;
+}
+.darg_ztree li a.curSelectedNode{
+	width:67px;
+	height:40px;
+	/*background:url(images/tree_selected_bg.png) no-repeat center;*/
+	color:#333333;
+	
+}
+.darg_ztree li a.tmpTargetNode_inner{
+	height:40px;
+	width:67px;
+	background:url(images/tree_hover_bg.png) no-repeat center;
+	border:none;
+}
+/*.darg_ztree li a span{display: block;}*/
+/*.darg_ztree li span.ico_docu{display:block;}*/
+.darg_ztree li span.button{
+	position: absolute;
+	*right:5px;
+	_right:4px;
+}
+.darg_ztree li span.button.center_docu{_font-size:5px;display:block;height:0px;width:53px;background:none;}
+.darg_ztree li span.button.bottom_docu{_font-size:5px;display:block;height:0px;width:53px;background:none;}
+/*.darg_ztree li span.button.center_open{_font-size:5px;height:8px;width:53px;background:url(images/tree_bnt.png) no-repeat center;display:block;*margin-top: 20px}*/
+.darg_ztree li span.button.center_open,
+.darg_ztree li span.button.bottom_open{_font-size:5px;display:block;height:10px;width:66px;margin-left:0px;*margin-left:-3px;bottom:3px;background:url(images/tree_bnt_open.png) no-repeat;}
+
+.darg_ztree li span.button.center_close,
+.darg_ztree li span.button.bottom_close{_font-size:5px;display:block;height:10px;width:66px;margin-left:1px;*margin-left:-3px;bottom:3px;background:url(images/tree_bnt_close.png) no-repeat;}
+/*.darg_ztree li span.button.bottom_open{_font-size:5px;display:block;height:8px;width:53px;background:url(images/tree_bnt.png) no-repeat center;*margin-top: 20px}
+.darg_ztree li span.button.bottom_close{_font-size:5px;display:block;height:8px;width:53px;background:url(images/tree_bnt.png) no-repeat center;*margin-top: 20px}*/
+.darg_ztree li span.button.root_open{_font-size:5px;display:block;height:10px;width:66px;bottom:3px;background:url(images/tree_bnt_open.png) no-repeat;}
+.darg_ztree li span.button.root_close{_font-size:5px;display:block;height:10px;width:66px;bottom:3px;background:url(images/tree_bnt_close.png) no-repeat;}
+.darg_ztree .nodebottomLine{height:24px;width:2px;display:inline-block;_display:block;background:#cccccc;_margin-top:3px;}
+
+.darg_ztree .leftNodeLine,
+.darg_ztree .centerNodeLine,
+.darg_ztree .rightNodeLine{display:block;height:2px;*width:auto;_display:inline;}
+
+.darg_ztree .leftNodeLine .lineLeft{float:left;height:1px;background:none;_font-size:1px;_display:inline;}
+.darg_ztree .leftNodeLine .lineRight{float:left;height:2px;background:#cccccc;_font-size:2px;_display:inline;}
+.darg_ztree .centerNodeLine .lineLeft{float:left;height:2px;background:#cccccc;_font-size:1px;_display:inline;}
+.darg_ztree .centerNodeLine .lineRight{float:left;height:2px;background:#cccccc;_font-size:1px;_display:inline;}
+.darg_ztree .rightNodeLine .lineLeft{float:left;height:2px;background:#cccccc;_font-size:1px;_display:inline;}
+.darg_ztree .rightNodeLine .lineRight{float:left;height:1px;background:none;_font-size:1px;_display:inline;}
+.darg_ztree li span.button.remove{position:absolute;width:15px;height:15px;top:3px;right:1px;background:url(images/tree_remove.png) no-repeat;}
+/*.ztree li span.button.remove {margin-right:2px; background-position:-110px -64px; vertical-align:top; *vertical-align:middle}*/
+.node_ztree li a{margin:5px;}
+/*节点的分类*/
+.darg_ztree li a.categoryTwo{
+	background:url(images/tree_default_bg2.png) no-repeat center;
+}
+.darg_ztree li a.categoryTwo.curSelectedNode,
+.darg_ztree li a.categoryTwo:hover{
+	background:url(images/tree_hover_bg2.png) no-repeat center;*background-position:6px 0;
+}
+.darg_ztree li a.categoryThree{
+	background:url(images/tree_default_bg3.png) no-repeat center;
+}
+.darg_ztree li a.categoryThree.curSelectedNode,
+.darg_ztree li a.categoryThree:hover{
+	background:url(images/tree_hover_bg3.png) no-repeat center;*background-position:6px 0;
+}
+.darg_ztree li a.categoryFour{
+	background:url(images/tree_default_bg4.png) no-repeat center;
+}
+.darg_ztree li a.categoryFour.curSelectedNode,
+.darg_ztree li a.categoryFour:hover{
+	background:url(images/tree_hover_bg4.png) no-repeat center;*background-position:6px 0;
+}
+.darg_ztree li a.categoryFive{
+	background:url(images/tree_default_bg5.png) no-repeat center;
+}
+.darg_ztree li a.categoryFive.curSelectedNode,
+.darg_ztree li a.categoryFive:hover{
+	background:url(images/tree_hover_bg5.png) no-repeat center;*background-position:6px 0;
+}
+
+
+/*横向展示样式*/
+
+.horizontal_dargTree {float:none;width:auto;vertical-align: middle;display:table-cell;}
+.horizontal_dargTree li ul,
+.horizontal_dargTree li{float:none;display:block;text-align:left;vertical-align: middle;}
+.horizontal_dargTree li a{
+	margin:0;
+	display:inline-block;
+	position:absolute;
+	width:90px;
+	height:30px;
+	line-height: 30px;
+	*padding-top:10px;
+	left:0;
+	color:#333333;
+	background:url(images/horizontal_tree_default_bg1.png) no-repeat center;
+	text-align:center;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:visible;
+	*z-index:2;
+}
+.horizontal_dargTree li a span{
+	display:inline-block;
+	width:6em;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.horizontal_dargTree li a.curSelectedNode,
+.horizontal_dargTree li a:hover{
+	width:90px;
+	height:30px;
+	*padding-top:10px;
+	line-height: 30px;
+	background:url(images/horizontal_tree_hover_bg1.png) no-repeat center;
+}
+.horizontal_dargTree li a.curSelectedNode{
+	width:90px;
+	height:30px;
+	/*background:url(images/tree_selected_bg.png) no-repeat center;*/
+	color:#333333;
+	
+}
+.horizontal_dargTree li ul{
+	margin-left:122px;
+	top:0;
+	padding-left:25px;
+	position:relative;
+}
+.horizontal_dargTree li{position:relative;}
+
+.horizontal_dargTree .leftNodeLine,
+.horizontal_dargTree .centerNodeLine,
+.horizontal_dargTree .rightNodeLine{
+	display:block;
+	height:24px;
+	width:2px;
+	background:#cccccc;
+	*width:auto;
+	_display:inline;
+	position:absolute;
+}
+.horizontal_dargTree .nodebottomLine{
+	width:28px;
+	height:2px;
+	_font-size:0px;
+	background:#cccccc;
+	display:inline-block;
+	position:absolute;
+	/*margin-top:20px;*/
+	left:-25px;
+}
+.horizontal_dargTree .leftNodeLine,
+.horizontal_dargTree .centerNodeLine,
+.horizontal_dargTree .rightNodeLine{left:-25px;width:2px;background:none;}
+.horizontal_dargTree .oneNodeLine{display: none;}
+.horizontal_dargTree .leftNodeLine .lineLeft{ _overflow:hidden;display: block;width: 2px; background:#F0F5FA;}
+.horizontal_dargTree .leftNodeLine .lineRight{ display: block;width: 2px; background:#cccccc;}
+.horizontal_dargTree .centerNodeLine .lineLeft{display: block;width: 2px; background:#cccccc;}
+.horizontal_dargTree .centerNodeLine .lineRight{display: block;width: 2px; background:#cccccc;}
+.horizontal_dargTree .rightNodeLine .lineLeft{display: block;width: 2px; background:#cccccc;}
+.horizontal_dargTree .rightNodeLine .lineRight{display: block;width: 2px; background:none;}
+.horizontal_dargTree li span.button.remove{}
+
+/*button*/
+.horizontal_dargTree li span.button.remove{
+	position:absolute;
+	width:12px;
+	height:12px;
+	top:3px;
+	*top:7px;
+	right:1px;
+	background:url(images/tree_remove.png) no-repeat center;
+}
+.horizontal_dargTree li span.button.center_docu{}
+.horizontal_dargTree li span.button.bottom_docu{}
+.horizontal_dargTree li span.button.center_open,
+.horizontal_dargTree li span.button.bottom_open,
+.horizontal_dargTree li span.button.center_close,
+.horizontal_dargTree li span.button.bottom_close,
+.horizontal_dargTree li span.button.root_open,
+.horizontal_dargTree li span.button.root_close{ 
+	left: 90px;
+	top:40%;
+	position:absolute;
+    z-index: 3;
+    /**margin-top:10px;*/
+    height:16px;
+	width:13px;
+}
+.horizontal_dargTree li span.button.root_open,
+.horizontal_dargTree li span.button.center_open,
+.horizontal_dargTree li span.button.bottom_open{
+	background:url(images/Horizontal_tree_bnt_open.png) no-repeat center;
+}
+.horizontal_dargTree li span.button.root_close,
+.horizontal_dargTree li span.button.center_close,
+.horizontal_dargTree li span.button.bottom_close{
+	
+	background:url(images/Horizontal_tree_bnt_close.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryTwo{
+	background:url(images/horizontal_tree_default_bg2.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryTwo.curSelectedNode,
+.horizontal_dargTree li a.categoryTwo:hover{
+	background:url(images/horizontal_tree_hover_bg2.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryThree{
+	background:url(images/horizontal_tree_default_bg3.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryThree.curSelectedNode,
+.horizontal_dargTree li a.categoryThree:hover{
+	background:url(images/horizontal_tree_hover_bg3.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryFour{
+	background:url(images/horizontal_tree_default_bg4.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryFour.curSelectedNode,
+.horizontal_dargTree li a.categoryFour:hover{
+	background:url(images/horizontal_tree_hover_bg4.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryFive{
+	background:url(images/horizontal_tree_default_bg5.png) no-repeat center;
+}
+.horizontal_dargTree li a.categoryFive.curSelectedNode,
+.horizontal_dargTree li a.categoryFive:hover{
+	background:url(images/horizontal_tree_hover_bg5.png) no-repeat center;
+}
+
+
+

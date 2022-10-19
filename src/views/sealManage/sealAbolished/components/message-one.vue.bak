@@ -1,0 +1,188 @@
+/**
+  * create by jiangke
+  * 一条留言显示信息
+  * 该组件被抛弃
+  */
+<template>
+    <div class="message-one">
+        <el-row>
+            <el-col :span=24 class="message-message" :class="messageClass(message.message.modify)">
+                <el-input
+                    type="textarea"
+                    v-model="message.message.value"
+                    :autosize="{minRows: 2, maxRows: 6}"
+                    :placeholder="placeholder_message"
+                    :readonly="isReadonly_message" 
+                    :resize="isResize_message"
+                    @change="change('message', message, $event)"
+                    @blur="blur('message', message, $event)" 
+                    @focus="focus('message', message, $event)">
+                </el-input>
+            </el-col>
+        </el-row>
+        <slot name="messageSlot"></slot>
+        <el-row>
+            <el-col :span="8" :offset="12" class="message-short" :class="messageClass(message.department.modify)">
+                <el-input 
+                    v-model="message.department.value" 
+                    :readonly="isReadonly_department"
+                    :placeholder="placeholder_department" 
+                    @change="change('department', message, $event)"
+                    @blur="blur('department', message, $event)"
+                    @focus="focus('department', message, $event)">
+                </el-input>
+            </el-col>
+            <el-col :span="4" class="message-short" :class="messageClass(message.name.modify)">
+                <el-input 
+                    v-model="message.name.value" 
+                    :readonly="isReadonly_name"
+                    :placeholder="placeholder_name" 
+                    @change="change('name', message, $event)"
+                    @blur="blur('name', message, $event)"
+                    @focus="focus('name', message, $event)">
+                </el-input>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="8" :offset="12" class="message-short" :class="messageClass(message.time.modify)">
+                <el-input 
+                    v-model="message.time.value"
+                    :readonly="isReadonly_time"
+                    :placeholder="placeholder_time" 
+                    @change="change('time', message, $event)"
+                    @blur="blur('time', message, $event)"
+                    @focus="focus('time', message, $event)">
+                </el-input>
+            </el-col>
+        </el-row>
+    </div>
+</template>
+
+<script>
+export default {
+    props: {
+        // 所有的数据。至少是一个对象数组
+        message: {
+            type: Object, 
+            // 数组／对象的默认值应当由一个工厂函数返
+            default: function(){
+                return {
+                    message:    {value: '', placeholder: '', modify: 'enable'}, 
+                    department: {value: '', placeholder: '', modify: 'hidden'},
+                    name:       {value: '', placeholder: '', modify: 'hidden'}, 
+                    time:       {value: '', placeholder: '', modify: 'hidden'}
+                }
+            }
+        },
+    },
+    data(){
+        return {
+
+        }
+    },
+    computed: {
+        // message输入框是否只读
+        isReadonly_message: function(){
+            return this.message.message.modify === 'disable';
+        },
+        isReadonly_department: function(){
+            return this.message.department.modify === 'disable';
+        },
+        isReadonly_name: function(){
+            return this.message.name.modify === 'disable';
+        },
+        isReadonly_time: function(){
+            return this.message.time.modify === 'disable';
+        },
+        // message输入框是否可缩放(改变尺寸)
+        isResize_message: function(){
+            return this.message.message.modify === 'disable' ? 'none' : 'vertical';
+        },
+        // message输入框的placeholder
+        placeholder_message: function(){
+            return (typeof this.message.message.placeholder === 'string') ? this.message.message.placeholder : '';
+        },
+        placeholder_department: function(){
+            return (typeof this.message.department.placeholder === 'string') ? this.message.department.placeholder : '';
+        },
+        placeholder_name: function(){
+            return (typeof this.message.name.placeholder === 'string') ? this.message.name.placeholder : '';
+        },
+        placeholder_time: function(){
+            return (typeof this.message.time.placeholder === 'string') ? this.message.time.placeholder : '';
+        },
+    },
+    methods: {
+         // 失去焦点——档案部门鉴定意见
+        blur(flag, message, event){
+            console.log('message-one_blur:', flag, message, event);
+            this.$emit('blur', flag, message, event);
+        },
+
+        // 获取焦点
+        focus(flag, message, event){
+            console.log('message-one_focus:', flag, message, event);
+            this.$emit('focus', flag, message, event);
+        },
+
+        // input值改变
+        change(flag, message, event){
+            console.log('message-one_change:', flag, message, event);
+            this.$emit('change', flag, message, event);
+        },
+
+        // 根据状态返回指定的class的样式
+        messageClass(status){
+            console.log('messageClass:', status);
+            let classObj = {
+                'hidden':  'message-hidden',
+                'disable': 'message-disable',
+                'enable':  'message-enable'
+            };
+            return classObj[status] || '';
+        },
+    },
+    mounted: function(){
+        console.log('message-one_mouted:', this);
+    }
+}
+</script>
+
+<style scoped lang="less" rel="stylesheet/less">
+    .message-one {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: 1px solid #DCDFE6;
+        .message-message {
+
+        }
+        .message-short {
+            line-height: 22px;
+            /deep/ .el-input__inner {
+                height: 22px;
+                line-height: 22px;
+            }
+        }
+        .message-disable {
+            /deep/ .el-input__inner {
+                border: none;
+                cursor: default;
+            }
+            /deep/ .el-textarea__inner {
+                border: none;
+                cursor: default;
+            }
+        }
+        .message-enable {
+            /deep/ .el-input__inner {
+                cursor: auto;
+            }
+            /deep/ .el-textarea__inner {
+                cursor: auto;
+            }
+        }
+        .message-hidden {
+            display: none;
+        }
+    }
+</style>
